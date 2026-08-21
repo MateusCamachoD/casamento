@@ -1,0 +1,4843 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mateus & Eloisa — 11.10.2026 | Nosso Casamento</title>
+
+  <meta
+    name="description"
+    content="Mateus & Eloisa — nosso grande dia, 11 de outubro de 2026. Acompanhe a contagem regressiva, lista de presentes, informações do evento e deixe seu recado."
+  />
+  <meta name="theme-color" content="#f6f2ec" id="themeColorMeta" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mateus & Eloisa — Casamento em 11.10.2026" />
+  <meta property="og:description" content="Duas pessoas. Uma história. Uma decisão definitiva de construir a vida juntos." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=90" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External Animation & FX Libraries (CDN) -->
+  <!-- GSAP Core & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Canvas Confetti Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* =========================================================
+       CSS VARIABLES & THEMES
+    ========================================================= */
+    :root {
+      --bg: #f7f4ee;
+      --bg-alt: #f0eae1;
+      --surface: #fdfcf9;
+      --surface-2: #ede5da;
+      --surface-glass: rgba(253, 252, 249, 0.85);
+
+      --ink: #1e1916;
+      --ink-secondary: #4a4038;
+      --muted: #7d7267;
+      --soft: #a89d92;
+
+      --accent: #a56e50;
+      --accent-hover: #8f5a3f;
+      --accent-dark: #6e422c;
+      --accent-light: #f5eae2;
+      --accent-glow: rgba(165, 110, 80, 0.28);
+
+      --gold: #c29b61;
+      --gold-glow: rgba(194, 155, 97, 0.35);
+
+      --line: rgba(30, 25, 22, 0.1);
+      --line-strong: rgba(30, 25, 22, 0.22);
+
+      --code-bg: #1c1815;
+      --code-surface: #26211d;
+      --code-border: rgba(255, 255, 255, 0.1);
+      --code-text: #ded6cf;
+      --code-kw: #e09f7a;
+      --code-str: #d4c28f;
+      --code-fn: #b8c7db;
+      --code-comm: #7e7368;
+
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: "JetBrains Mono", "DM Mono", monospace;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      --shadow-sm: 0 4px 14px rgba(30, 25, 22, 0.05);
+      --shadow-md: 0 12px 35px rgba(30, 25, 22, 0.08);
+      --shadow-lg: 0 25px 60px rgba(30, 25, 22, 0.14);
+      --shadow-glow: 0 0 40px var(--accent-glow);
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #110e0c;
+      --bg-alt: #181411;
+      --surface: #1a1613;
+      --surface-2: #241e19;
+      --surface-glass: rgba(26, 22, 19, 0.88);
+
+      --ink: #f8f5f0;
+      --ink-secondary: #ded6cd;
+      --muted: #a69c92;
+      --soft: #70675f;
+
+      --accent: #d89973;
+      --accent-hover: #e8ab88;
+      --accent-dark: #b87852;
+      --accent-light: #2b1f17;
+      --accent-glow: rgba(216, 153, 115, 0.35);
+
+      --gold: #d8b278;
+      --gold-glow: rgba(216, 178, 120, 0.35);
+
+      --line: rgba(248, 245, 240, 0.1);
+      --line-strong: rgba(248, 245, 240, 0.22);
+
+      --code-bg: #0c0a08;
+      --code-surface: #14110e;
+      --code-border: rgba(255, 255, 255, 0.08);
+
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 12px 35px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    /* =========================================================
+       CUSTOM </> CODE BRACKET CURSOR
+    ========================================================= */
+    * {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Cfilter id='shadow'%3E%3CfeDropShadow dx='0' dy='1' stdDeviation='1.5' flood-color='%23000000' flood-opacity='0.45'/%3E%3C/filter%3E%3Crect x='2' y='6' width='30' height='22' rx='6' fill='%231e1916' stroke='%23a56e50' stroke-width='1.5' filter='url(%23shadow)'/%3E%3Ctext x='17' y='21.5' font-family='monospace' font-size='12' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3E%26lt%3B/%26gt%3B%3C/text%3E%3C/svg%3E") 17 17, auto;
+    }
+
+    button, a, input, textarea, select, .magnetic-btn, .tilt-card, .filter-btn, .cmd-item, .tag-btn, .like-btn, [role="button"] {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Cfilter id='shadow2'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='2' flood-color='%23a56e50' flood-opacity='0.6'/%3E%3C/filter%3E%3Crect x='2' y='6' width='30' height='22' rx='6' fill='%23a56e50' stroke='%23ffffff' stroke-width='1.5' filter='url(%23shadow2)'/%3E%3Ctext x='17' y='21.5' font-family='monospace' font-size='12' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3E%26lt%3B/%26gt%3B%3C/text%3E%3C/svg%3E") 17 17, pointer !important;
+    }
+
+    /* Floating Interactive </> Cursor Badge */
+    .code-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface-glass);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 9999999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 20px var(--accent-glow);
+      user-select: none;
+      opacity: 0;
+      transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out), background-color 0.25s var(--ease-out), border-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), opacity 0.3s ease;
+      will-change: transform;
+    }
+
+    .code-cursor.visible {
+      opacity: 1;
+    }
+
+    .code-cursor.hovering {
+      width: 54px;
+      height: 54px;
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--gold);
+      box-shadow: 0 0 35px var(--accent-glow);
+      font-size: 15px;
+    }
+
+    .code-cursor.clicking {
+      transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    @media (pointer: coarse), (max-width: 768px) {
+      .code-cursor {
+        display: none !important;
+      }
+    }
+
+    /* =========================================================
+       RESET & BASE STYLES
+    ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+      position: relative;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* Scroll progress bar */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      z-index: 99999;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    /* Interactive ambient canvas with particle constellation */
+    #ambientCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+    }
+
+    /* Cursor spotlight effect */
+    .cursor-spotlight {
+      position: fixed;
+      width: 650px;
+      height: 650px;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body:hover .cursor-spotlight {
+      opacity: 1;
+    }
+
+    /* =========================================================
+       TYPOGRAPHY & GLOBAL UTILITIES
+    ========================================================= */
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    section {
+      position: relative;
+      padding: 140px 0;
+      z-index: 4;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1.5px;
+      background: currentColor;
+    }
+
+    .section-heading {
+      max-width: 780px;
+    }
+
+    .section-title {
+      margin-top: 18px;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6.5vw, 84px);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 0.95;
+      color: var(--ink);
+    }
+
+    .section-title em {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title em::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.4;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s var(--ease-out);
+    }
+
+    .section-title:hover em::after {
+      transform: scaleX(1);
+    }
+
+    .section-description {
+      max-width: 580px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* =========================================================
+       BUTTON ANIMATIONS & UNIQUE CLICK/HOVER EFFECTS
+    ========================================================= */
+    /* Liquid Glow Border Button */
+    .btn-glow-border {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 30px;
+      border-radius: var(--radius-full);
+      background: var(--ink);
+      color: var(--surface);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.25s var(--ease-bounce), box-shadow 0.3s ease, background 0.3s ease;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(30, 25, 22, 0.15);
+    }
+
+    .btn-glow-border::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: var(--radius-full);
+      background: conic-gradient(from 0deg, transparent 0deg, var(--accent) 90deg, var(--gold) 180deg, var(--accent) 270deg, transparent 360deg);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      animation: rotateGlow 4s linear infinite;
+    }
+
+    .btn-glow-border:hover::before {
+      opacity: 1;
+    }
+
+    .btn-glow-border:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 35px var(--accent-glow);
+      background: var(--accent-hover);
+      color: #ffffff;
+    }
+
+    .btn-glow-border:active {
+      transform: translateY(-1px) scale(0.96);
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Ripple Click Wave Effect */
+    .ripple-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ripple-effect .ripple-wave {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+      transform: scale(0);
+      animation: rippleAnim 0.65s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      pointer-events: none;
+    }
+
+    @keyframes rippleAnim {
+      to {
+        transform: scale(4.5);
+        opacity: 0;
+      }
+    }
+
+    /* Holographic Glare Reflection Card */
+    .glare-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
+      overflow: hidden;
+    }
+
+    .glare-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+    }
+
+    /* Interactive Explanatory Term Tooltip */
+    .term-tooltip-wrap {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+
+    .term-highlight {
+      border-bottom: 2px dashed var(--accent);
+      color: inherit;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .term-highlight::after {
+      content: " ⓘ";
+      font-size: 0.38em;
+      vertical-align: super;
+      color: var(--accent);
+      font-family: var(--sans);
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .term-tooltip-wrap:hover .term-highlight,
+    .term-tooltip-wrap:focus-within .term-highlight {
+      color: var(--accent);
+      border-bottom-style: solid;
+    }
+
+    .term-tooltip {
+      position: absolute;
+      bottom: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: min(340px, 85vw);
+      background: var(--code-bg);
+      color: #ded6cf;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 13px;
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.6;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.3s var(--ease-bounce);
+      z-index: 100;
+      text-align: left;
+      letter-spacing: normal;
+    }
+
+    .term-tooltip::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: var(--accent);
+    }
+
+    .term-tooltip-wrap:hover .term-tooltip,
+    .term-tooltip-wrap:focus-within .term-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .term-tooltip-header {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .term-tooltip-body strong {
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       PRELOADER / INITIALIZER
+    ========================================================= */
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #14100e;
+      color: #ded6cf;
+      transition: opacity 0.8s var(--ease-out), visibility 0.8s;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-inner {
+      width: min(460px, calc(100% - 40px));
+      background: #1c1815;
+      padding: 36px 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    .loader-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .loader-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .loader-dot:nth-child(1) { background: #ff5f56; }
+    .loader-dot:nth-child(2) { background: #ffbd2e; }
+    .loader-dot:nth-child(3) { background: #27c93f; }
+
+    .loader-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #8a7f74;
+      margin-left: 8px;
+    }
+
+    .loader-code {
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 8px;
+    }
+
+    .loader-code .kw { color: #e09f7a; }
+    .loader-code .str { color: #d4c28f; }
+    .loader-code .fn { color: #b8c7db; }
+    .loader-code .comm { color: #7e7368; }
+
+    .loader-progress-wrap {
+      margin-top: 24px;
+    }
+
+    .loader-progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #a89d92;
+      margin-bottom: 8px;
+    }
+
+    .loader-line {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .loader-progress {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #e09f7a, #d4c28f);
+      animation: loaderProgressAnim 1.6s var(--ease-out) forwards;
+    }
+
+    @keyframes loaderProgressAnim {
+      0% { width: 0%; }
+      40% { width: 65%; }
+      80% { width: 90%; }
+      100% { width: 100%; }
+    }
+
+    /* =========================================================
+       HEADER & NAVIGATION
+    ========================================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 24px 0;
+      transition: padding 0.4s var(--ease-out), background-color 0.4s var(--ease-out), border-color 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+      border-bottom: 1px solid transparent;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Top state (over dark Hero image) */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      transition: transform 0.3s var(--ease-bounce), color 0.4s ease;
+    }
+
+    .brand:hover {
+      transform: scale(1.05);
+    }
+
+    .brand-mark {
+      color: #e3b092;
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 400;
+      transition: color 0.4s ease;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+    }
+
+    .nav a {
+      position: relative;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 6px 10px;
+      transition: color 0.3s ease;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1.5px;
+      background: #e3b092;
+      transition: width 0.3s var(--ease-out), background-color 0.4s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: #ffffff;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: calc(100% - 20px);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #ffffff;
+      font-size: 14px;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-icon:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-cmd {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: rgba(255, 255, 255, 0.9);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-cmd kbd {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .btn-cmd:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: #ffffff;
+      transition: 0.3s var(--ease-out), background-color 0.4s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Scrolled state (over light or dark body content) */
+    .site-header.scrolled {
+      padding: 14px 0;
+      background-color: var(--surface-glass);
+      border-color: var(--line);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .site-header.scrolled .brand {
+      color: var(--ink);
+    }
+
+    .site-header.scrolled .brand-mark {
+      color: var(--accent);
+    }
+
+    .site-header.scrolled .nav a {
+      color: var(--muted);
+    }
+
+    .site-header.scrolled .nav a::after {
+      background: var(--accent);
+    }
+
+    .site-header.scrolled .nav a:hover,
+    .site-header.scrolled .nav a.active {
+      color: var(--ink);
+    }
+
+    .site-header.scrolled .btn-icon {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .site-header.scrolled .btn-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-md);
+    }
+
+    .site-header.scrolled .btn-cmd {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      box-shadow: none;
+    }
+
+    .site-header.scrolled .btn-cmd kbd {
+      background: var(--bg-alt);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .site-header.scrolled .btn-cmd:hover {
+      border-color: var(--accent);
+      color: var(--ink);
+      background: var(--surface-2);
+    }
+
+    .site-header.scrolled .nav-toggle span {
+      background: var(--ink);
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--surface-glass);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--ink);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent);
+      transform: scale(1.06);
+    }
+
+    /* =========================================================
+       HERO SECTION
+    ========================================================= */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(16, 12, 10, 0.35) 0%, rgba(16, 12, 10, 0.75) 100%),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=90") center/cover no-repeat;
+      position: relative;
+      padding-top: 100px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.5) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      width: min(920px, calc(100% - 40px));
+      text-align: center;
+      will-change: transform, opacity;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #f7ede6;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-badge .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 10px #34d399;
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.7; }
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(68px, 13vw, 160px);
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      line-height: 0.78;
+      text-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1 .ampersand {
+      display: block;
+      margin: 12px 0;
+      color: #e3b092;
+      font-size: 0.45em;
+      font-style: italic;
+      line-height: 0.6;
+      text-shadow: 0 0 25px rgba(227, 176, 146, 0.4);
+    }
+
+    .hero-date-wrap {
+      margin-top: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-date {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: 0.35em;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      max-width: 520px;
+      margin: 28px auto 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .btn-secondary-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .btn-secondary-glass:hover {
+      background: rgba(255, 255, 255, 0.28);
+      border-color: #ffffff;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      right: 36px;
+      bottom: 36px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transition: color 0.3s ease;
+    }
+
+    .hero-scroll:hover {
+      color: #ffffff;
+    }
+
+    .hero-scroll::after {
+      content: "";
+      width: 1.5px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: scrollLineAnim 2.2s infinite;
+    }
+
+    .hero-code-tag {
+      position: absolute;
+      left: 36px;
+      bottom: 36px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.8;
+      background: rgba(20, 16, 14, 0.45);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-code-tag .hl {
+      color: #e3b092;
+    }
+
+    @keyframes scrollLineAnim {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scaleY(0.4);
+        transform-origin: top;
+      }
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+    }
+
+    /* =========================================================
+       COUNTDOWN & METRICS SECTION
+    ========================================================= */
+    .countdown-section {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .countdown-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .deploy-progress-box {
+      margin-top: 36px;
+      padding: 22px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .deploy-progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .deploy-progress-header strong {
+      color: var(--accent);
+    }
+
+    .deploy-progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .deploy-progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      width: 0%;
+      transition: width 1.5s var(--ease-out);
+      border-radius: 4px;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .count-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 36px 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
+    }
+
+    .count-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .count-number {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(48px, 5.5vw, 76px);
+      font-weight: 600;
+      line-height: 0.9;
+      color: var(--ink);
+      transition: color 0.3s ease, transform 0.2s var(--ease-bounce);
+    }
+
+    .count-card:hover .count-number {
+      color: var(--accent);
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 14px;
+      color: var(--soft);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       STORY SECTION
+    ========================================================= */
+    .story {
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .story-media-wrap {
+      position: relative;
+    }
+
+    .story-media {
+      position: relative;
+      height: 640px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .story-media img {
+      width: 100%;
+      height: 115%;
+      object-fit: cover;
+      transform: translateY(-8%);
+      transition: transform 0.2s linear;
+    }
+
+    .story-media-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(20, 16, 14, 0.75);
+      backdrop-filter: blur(14px);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f7eee7;
+      font-family: var(--mono);
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .story-code-tag {
+      color: var(--soft);
+      font-family: var(--mono);
+      font-size: 11px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .story-copy p {
+      margin-top: 24px;
+      color: var(--ink-secondary);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .signature-wrap {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .signature {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    /* =========================================================
+       GIT TIMELINE SECTION ("git log of our love")
+    ========================================================= */
+    .timeline-section {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-wrap {
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 24px;
+      width: 2px;
+      background: var(--line-strong);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 70px;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 17px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--accent);
+      z-index: 2;
+      transition: all 0.3s var(--ease-bounce);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.4);
+      background: var(--accent);
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .timeline-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .timeline-item:hover .timeline-card {
+      border-color: var(--accent);
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-commit-hash {
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+    }
+
+    .timeline-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .timeline-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CODE PLAYGROUND & LIVE TERMINAL (SIDE-BY-SIDE)
+    ========================================================= */
+    .code-section {
+      padding: 120px 0;
+      background: var(--code-bg);
+      color: var(--code-text);
+      position: relative;
+    }
+
+    .code-grid-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .code-window,
+    .terminal-window {
+      background: var(--code-surface);
+      border: 1px solid var(--code-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .code-window-bar,
+    .terminal-window-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid var(--code-border);
+    }
+
+    .code-tabs,
+    .terminal-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .terminal-title-text {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #9c9186;
+      margin-left: 6px;
+    }
+
+    .terminal-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .terminal-status-badge.running {
+      color: #fbbf24;
+      background: rgba(251, 191, 36, 0.1);
+      border-color: rgba(251, 191, 36, 0.25);
+    }
+
+    .code-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #9c9186;
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+
+    .code-tab.active {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .code-run-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      background: #27c93f;
+      color: #0b2e10;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.25s var(--ease-bounce);
+      box-shadow: 0 4px 15px rgba(39, 201, 63, 0.35);
+    }
+
+    .code-run-btn:hover {
+      background: #2fe44a;
+      transform: scale(1.06);
+      box-shadow: 0 6px 22px rgba(39, 201, 63, 0.55);
+    }
+
+    .code-body {
+      padding: 28px 24px;
+      font-family: var(--mono);
+      font-size: clamp(12px, 1.1vw, 13.5px);
+      line-height: 1.95;
+      overflow-x: auto;
+      flex-grow: 1;
+    }
+
+    .code-line {
+      display: flex;
+      gap: 16px;
+    }
+
+    .code-line-num {
+      user-select: none;
+      color: #554a40;
+      width: 24px;
+      text-align: right;
+    }
+
+    .code-line-content {
+      color: #ded6cf;
+    }
+
+    .code-kw { color: var(--code-kw); font-weight: 600; }
+    .code-str { color: var(--code-str); }
+    .code-fn { color: var(--code-fn); }
+    .code-comm { color: var(--code-comm); font-style: italic; }
+
+    /* Live Terminal Window */
+    .terminal-body {
+      padding: 24px;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.8;
+      background: #0d0b09;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      max-height: 440px;
+    }
+
+    .term-user { color: #34d399; font-weight: 600; }
+    .term-path { color: #60a5fa; }
+    .term-cmd { color: #f3f4f6; font-weight: 600; }
+
+    .terminal-output-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .terminal-idle-msg {
+      color: #6e6459;
+      font-style: italic;
+      padding: 8px 0;
+    }
+
+    .terminal-log-line {
+      animation: terminalLineSlide 0.3s var(--ease-out) forwards;
+    }
+
+    .terminal-log-success { color: #34d399; font-weight: 500; }
+    .terminal-log-highlight { color: #e09f7a; }
+    .terminal-log-heart { color: #f43f5e; font-weight: 700; font-size: 13px; text-shadow: 0 0 12px rgba(244, 63, 94, 0.4); }
+
+    .terminal-live-cursor-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .terminal-cursor {
+      color: #34d399;
+      animation: blinkCursor 1s infinite;
+    }
+
+    @keyframes blinkCursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes terminalLineSlide {
+      from { opacity: 0; transform: translateX(-6px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 992px) {
+      .code-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* =========================================================
+       GIFTS & PIX SECTION
+    ========================================================= */
+    .gifts {
+      background: var(--bg);
+    }
+
+    .gifts-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .gift-filters {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--ink);
+      color: var(--surface);
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gift-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gift-image-wrap {
+      position: relative;
+      height: 185px;
+      overflow: hidden;
+      background: var(--bg-alt);
+    }
+
+    .gift-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out), filter 0.6s ease;
+    }
+
+    .gift-card:hover .gift-image {
+      transform: scale(1.08);
+      filter: brightness(0.95);
+    }
+
+    .gift-badge-cat {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      background: rgba(20, 16, 14, 0.65);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .gift-number {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      background: rgba(20, 16, 14, 0.65);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .gift-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .gift-title {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .gift-description {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      min-height: 52px;
+    }
+
+    .gift-progress-wrap {
+      margin-top: 14px;
+    }
+
+    .gift-status-line {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--accent);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .gift-track {
+      width: 100%;
+      height: 4px;
+      background: var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .gift-track-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.8s var(--ease-out);
+    }
+
+    .gift-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .gift-price {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .gift-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: var(--ink);
+      color: var(--surface);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease-bounce);
+    }
+
+    .gift-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    /* Ranking Box */
+    .ranking-box {
+      margin-top: 80px;
+      padding: 48px;
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ranking-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .ranking-title {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 600;
+      margin-top: 8px;
+      color: var(--ink);
+    }
+
+    .ranking-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .ranking-item {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .ranking-item:hover {
+      transform: translateX(8px);
+      border-color: var(--accent);
+    }
+
+    .ranking-pos {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .ranking-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .ranking-count {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--line);
+    }
+
+    /* =========================================================
+       EVENT INFO & DRESS CODE
+    ========================================================= */
+    .info {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .info-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 42px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s var(--ease-out);
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    .info-idx {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--soft);
+      letter-spacing: 0.1em;
+    }
+
+    .info-icon-large {
+      font-family: var(--serif);
+      font-size: 48px;
+      color: var(--accent);
+      margin: 28px 0 16px;
+      line-height: 1;
+    }
+
+    .info-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .info-desc {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      flex-grow: 1;
+    }
+
+    .info-card-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .info-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .info-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Dress Code Palette Preview */
+    .color-swatches {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .color-swatch {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--surface);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.25s var(--ease-bounce), box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.3);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    /* =========================================================
+       GUESTBOOK / RECADOS
+    ========================================================= */
+    .guestbook {
+      background: var(--bg);
+    }
+
+    .guestbook-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      margin-top: 60px;
+      align-items: flex-start;
+    }
+
+    .message-form {
+      position: sticky;
+      top: 100px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-code-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--soft);
+      margin-bottom: 24px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      color: var(--ink);
+      font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--surface);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .char-counter {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--soft);
+      margin-top: 6px;
+    }
+
+    .tags-selector {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .tag-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--line);
+      background: var(--bg);
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tag-btn.active,
+    .tag-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-full);
+      background: var(--ink);
+      color: var(--surface);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s var(--ease-bounce);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .submit-button:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .message-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .message-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease-out), border-color 0.3s;
+    }
+
+    .message-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .message-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .message-author {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .message-time {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--soft);
+    }
+
+    .message-tag-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .message-text {
+      color: var(--ink-secondary);
+      font-size: 14px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+
+    .message-card-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .like-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s var(--ease-bounce);
+    }
+
+    .like-btn:hover,
+    .like-btn.liked {
+      color: #f43f5e;
+      background: rgba(244, 63, 94, 0.08);
+      transform: scale(1.15);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    .footer {
+      background: var(--code-bg);
+      color: #ffffff;
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--serif);
+      font-size: 22vw;
+      color: rgba(255, 255, 255, 0.025);
+      white-space: nowrap;
+      pointer-events: none;
+      font-weight: 700;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 5;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-label {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-title {
+      font-family: var(--serif);
+      font-size: clamp(54px, 9vw, 110px);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+
+    .footer-message {
+      margin: 28px auto 0;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .footer-back-to-top {
+      margin: 48px auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease-bounce);
+    }
+
+    .footer-back-to-top:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .footer-code-sign {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* =========================================================
+       GIFT & PIX MODAL
+    ========================================================= */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(16, 12, 10, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      touch-action: pan-y;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      position: relative;
+      width: min(500px, 100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.4);
+      transform: translateY(30px) scale(0.96);
+      transition: transform 0.4s var(--ease-bounce);
+    }
+
+    .modal.active .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 18px;
+      transition: all 0.25s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: rotate(90deg);
+    }
+
+    .modal-title {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 600;
+      margin-top: 8px;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .modal-desc {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .pix-card {
+      margin: 20px 0;
+      padding: 20px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pix-key-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .pix-key-text {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 6px 0 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .copy-pix-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      background: var(--accent);
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease-bounce);
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .copy-pix-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       COMMAND PALETTE (Ctrl+K)
+    ========================================================= */
+    .cmd-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: rgba(16, 12, 10, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 14vh;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s var(--ease-out);
+    }
+
+    .cmd-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cmd-modal {
+      width: min(600px, calc(100% - 32px));
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5);
+      transform: translateY(-20px) scale(0.98);
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .cmd-overlay.active .cmd-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .cmd-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cmd-input-wrap svg {
+      color: var(--muted);
+    }
+
+    .cmd-input {
+      flex-grow: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .cmd-list {
+      max-height: 340px;
+      overflow-y: auto;
+      padding: 10px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .cmd-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .cmd-item:hover,
+    .cmd-item.selected {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+
+    .cmd-item-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cmd-badge {
+      font-size: 10px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* =========================================================
+       TOAST NOTIFICATIONS
+    ========================================================= */
+    .toast-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--code-bg);
+      color: #ffffff;
+      border: 1px solid var(--code-border);
+      border-radius: var(--radius-md);
+      padding: 14px 22px;
+      font-family: var(--mono);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      transform: translateY(20px) scale(0.9);
+      opacity: 0;
+      transition: all 0.3s var(--ease-bounce);
+      pointer-events: auto;
+    }
+
+    .toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* =========================================================
+       SCROLL REVEAL GSAP UTILITIES
+    ========================================================= */
+    .gsap-reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      will-change: opacity, transform;
+    }
+
+    /* =========================================================
+       RESPONSIVENESS (MOBILE & TABLET)
+    ========================================================= */
+    @media (max-width: 1200px) {
+      .gift-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .countdown-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .story-media {
+        height: 480px;
+      }
+
+      .gift-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guestbook-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .message-form {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 90px 0;
+      }
+
+      .nav,
+      .btn-cmd {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero {
+        background-attachment: scroll;
+      }
+
+      .hero h1 {
+        font-size: clamp(56px, 16vw, 90px);
+      }
+
+      .hero-date {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+      }
+
+      .hero-code-tag {
+        display: none;
+      }
+
+      .hero-scroll {
+        right: 18px;
+        bottom: 20px;
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .count-card {
+        padding: 24px 12px;
+      }
+
+      .count-number {
+        font-size: 44px;
+      }
+
+      .gift-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ranking-box {
+        padding: 28px 20px;
+      }
+
+      .ranking-item {
+        grid-template-columns: 32px 1fr auto;
+        gap: 12px;
+      }
+
+      .ranking-name {
+        font-size: 16px;
+      }
+
+      .modal-box {
+        padding: 30px 20px;
+      }
+
+      .footer {
+        padding-top: 100px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .gsap-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Custom </> Code Cursor -->
+  <div class="code-cursor" id="codeCursor">&lt;/&gt;</div>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Interactive Particles Constellation Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Interactive Cursor Spotlight Glow -->
+  <div class="cursor-spotlight" id="cursorSpotlight"></div>
+
+  <!-- =========================================================
+       PRELOADER / INITIALIZER
+  ========================================================== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-header">
+        <span class="loader-dot"></span>
+        <span class="loader-dot"></span>
+        <span class="loader-dot"></span>
+        <span class="loader-title">mateus-eloisa-wedding.sh</span>
+      </div>
+
+      <div class="loader-code">
+        <span class="kw">const</span> groom = <span class="str">"Mateus"</span>;<br />
+        <span class="kw">const</span> bride = <span class="str">"Eloisa"</span>;<br />
+        <span class="kw">const</span> targetDate = <span class="str">"11.10.2026"</span>;<br />
+        <span class="comm">// initializing lifetime deployment...</span>
+      </div>
+
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-info">
+          <span>Loading assets & love...</span>
+          <span id="loaderPercent">100%</span>
+        </div>
+        <div class="loader-line">
+          <div class="loader-progress"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       SITE HEADER
+  ========================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="#inicio" class="brand" aria-label="Mateus e Eloisa Início">
+        <span class="brand-mark">{</span>
+        M & E
+        <span class="brand-mark">}</span>
+      </a>
+
+      <nav class="nav" id="mainNav">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#countdown">Deploy</a>
+        <a href="#historia">História</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#codigo">marriage.js</a>
+        <a href="#presentes">Presentes</a>
+        <a href="#informacoes">Informações</a>
+        <a href="#recados">Recados</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="btn-icon magnetic-btn" id="themeToggleBtn" aria-label="Alternar Tema Claro/Escuro" title="Alternar tema">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Command Palette Trigger -->
+        <button class="btn-cmd magnetic-btn" id="cmdTriggerBtn" title="Abrir Command Palette (Ctrl+K)">
+          <span>Comandos</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="nav-toggle" id="navToggle" aria-label="Menu de Navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" class="mobile-nav-link">Início</a>
+    <a href="#countdown" class="mobile-nav-link">Deploy</a>
+    <a href="#historia" class="mobile-nav-link">História</a>
+    <a href="#timeline" class="mobile-nav-link">Git Timeline</a>
+    <a href="#codigo" class="mobile-nav-link">marriage.js</a>
+    <a href="#presentes" class="mobile-nav-link">Presentes</a>
+    <a href="#informacoes" class="mobile-nav-link">Informações</a>
+    <a href="#recados" class="mobile-nav-link">Recados</a>
+  </div>
+
+
+  <main>
+
+    <!-- =======================================================
+         HERO SECTION
+    ======================================================== -->
+    <section class="hero" id="inicio">
+      <div class="hero-content" id="heroContent">
+
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          System Status: Engaged & Ready
+        </div>
+
+        <h1 id="heroTitle">
+          Mateus
+          <span class="ampersand">&</span>
+          Eloisa
+        </h1>
+
+        <div class="hero-date-wrap">
+          <div class="hero-date">11 . 10 . 2026</div>
+        </div>
+
+        <p class="hero-subtitle">
+          Duas pessoas. Uma história singular. A decisão mais bonita e definitiva de construir o futuro juntos.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#presentes" class="btn-glow-border ripple-effect magnetic-btn">
+            <span>🎁 Lista de Presentes</span>
+          </a>
+          <a href="#historia" class="btn-secondary-glass ripple-effect magnetic-btn">
+            <span>📖 Nossa História</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-code-tag" id="heroCodeTag">
+        <div><span class="hl">const</span> relationship = {</div>
+        <div>&nbsp;&nbsp;couple: <span class="hl">"Mateus & Eloisa"</span>,</div>
+        <div>&nbsp;&nbsp;future: <span class="hl">"forever"</span></div>
+        <div>};</div>
+      </div>
+
+      <a href="#countdown" class="hero-scroll" aria-label="Rolar para ver mais">
+        Scroll to discover
+      </a>
+    </section>
+
+
+    <!-- =======================================================
+         COUNTDOWN & DEPLOY STATUS SECTION
+    ======================================================== -->
+    <section class="countdown-section" id="countdown">
+      <div class="container countdown-layout">
+
+        <div class="countdown-intro gsap-reveal">
+          <div class="eyebrow">// SYSTEM METRICS & COUNTDOWN</div>
+          <h2 class="section-title">
+            Falta pouco para o <span class="term-tooltip-wrap">
+              <em class="term-highlight" tabindex="0" role="button" aria-label="O que é deploy?">deploy.</em>
+              <span class="term-tooltip">
+                <span class="term-tooltip-header">💡 O que é um "deploy"?</span>
+                <span class="term-tooltip-body">Na engenharia de software, <strong>deploy</strong> é o grande momento em que o projeto sai dos bastidores e vai oficialmente ao ar no mundo real. No nosso caso, é a celebração do nosso casamento!</span>
+              </span>
+            </span>
+          </h2>
+          <p class="section-description">
+            Após incontáveis sprints de planejamento, ajustes finos e muito carinho, nossa cerimônia está prestes a entrar em produção oficial.
+          </p>
+
+          <!-- Deploy Progress Bar -->
+          <div class="deploy-progress-box glare-card">
+            <div class="deploy-progress-header">
+              <span>Pipeline: <strong id="deployStatusText">Em execução</strong></span>
+              <span id="deployPercentText">94.8%</span>
+            </div>
+            <div class="deploy-progress-track">
+              <div class="deploy-progress-bar-fill" id="deployProgressBarFill" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="countdown-grid gsap-reveal">
+          <div class="count-card glare-card">
+            <span class="count-number" id="days">00</span>
+            <span class="count-label">Dias</span>
+          </div>
+
+          <div class="count-card glare-card">
+            <span class="count-number" id="hours">00</span>
+            <span class="count-label">Horas</span>
+          </div>
+
+          <div class="count-card glare-card">
+            <span class="count-number" id="minutes">00</span>
+            <span class="count-label">Minutos</span>
+          </div>
+
+          <div class="count-card glare-card">
+            <span class="count-number" id="seconds">00</span>
+            <span class="count-label">Segundos</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         OUR STORY SECTION
+    ======================================================== -->
+    <section class="story" id="historia">
+      <div class="container story-grid">
+
+        <div class="story-media-wrap gsap-reveal">
+          <div class="story-media glare-card">
+            <img
+              id="storyImage"
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=90"
+              alt="Mateus & Eloisa"
+              loading="lazy"
+            />
+            <div class="story-media-badge">
+              <span>✦ Mateus & Eloisa</span>
+              <span>•</span>
+              <span>11.10.2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-copy gsap-reveal">
+          <div class="story-code-tag">
+            <span>// README.md</span>
+            <span>/</span>
+            <span>our-story.md</span>
+          </div>
+
+          <div class="eyebrow">Nossa Trajetória</div>
+
+          <h2 class="section-title">
+            De nós dois para uma <em>vida inteira.</em>
+          </h2>
+
+          <p>
+            Toda grande história de amor possui aquele ponto de inflexão exato: o momento em que duas vidas independentes decidem compartilhar o mesmo código-fonte, os mesmos sonhos e todas as risadas.
+          </p>
+
+          <p>
+            Entre conversas que varavam a madrugada, cafés compartilhados e planos desenhados em folhas soltas, descobrimos que a nossa melhor versão existe quando estamos lado a lado.
+          </p>
+
+          <p>
+            No dia 11 de outubro de 2026, celebramos diante de quem mais amamos o passo mais lindo da nossa jornada. Obrigado por estar aqui com a gente!
+          </p>
+
+          <div class="signature-wrap">
+            <div class="signature">Mateus & Eloisa</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         GIT COMMIT TIMELINE SECTION
+    ======================================================== -->
+    <section class="timeline-section" id="timeline">
+      <div class="container">
+
+        <div class="section-heading gsap-reveal">
+          <div class="eyebrow">// git log --graph --oneline</div>
+          <h2 class="section-title">
+            Nossos <span class="term-tooltip-wrap">
+              <span class="term-highlight" tabindex="0" role="button" aria-label="O que é commit?">commits</span>
+              <span class="term-tooltip">
+                <span class="term-tooltip-header">💡 O que é um "commit"?</span>
+                <span class="term-tooltip-body">No desenvolvimento de software, um <strong>commit</strong> é o registro definitivo de um momento ou alteração importante, salvo para sempre no histórico. Aqui, são os grandes marcos do nosso amor!</span>
+              </span>
+            </span> mais <em>marcantes.</em>
+          </h2>
+          <p class="section-description">
+            O histórico de versões da nossa história: cada marco importante que nos trouxe até o lançamento da versão 1.0.0.
+          </p>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-line" id="timelineProgressLine"></div>
+
+          <!-- Commit 1 -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glare-card">
+              <div class="timeline-meta">
+                <span class="timeline-commit-hash">commit c0ffee1</span>
+                <span class="timeline-date">Capítulo 01</span>
+              </div>
+              <h3 class="timeline-title">Initial commit: O primeiro olhar</h3>
+              <p class="timeline-text">
+                O dia em que nossos caminhos se cruzaram pela primeira vez. Uma conversa que começou despretensiosa e logo virou a certeza de que algo muito especial estava nascendo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Commit 2 -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glare-card">
+              <div class="timeline-meta">
+                <span class="timeline-commit-hash">commit a41b773</span>
+                <span class="timeline-date">Capítulo 02</span>
+              </div>
+              <h3 class="timeline-title">feat(travel): A primeira viagem juntos</h3>
+              <p class="timeline-text">
+                Malas arrumadas, GPS confuso e as memórias mais divertidas que poderíamos colecionar. Ali descobrimos que qualquer destino é perfeito na companhia certa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Commit 3 -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glare-card">
+              <div class="timeline-meta">
+                <span class="timeline-commit-hash">commit 9b82c44</span>
+                <span class="timeline-date">Capítulo 03</span>
+              </div>
+              <h3 class="timeline-title">merge 'namoro' into 'noivado': O Pedido 💍</h3>
+              <p class="timeline-text">
+                Coração acelerado, palavras ensaiadas mil vezes (e esquecidas na hora da emoção) e o "SIM" mais emocionante e definitivo das nossas vidas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Commit 4 -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glare-card" style="border-color: var(--accent);">
+              <div class="timeline-meta">
+                <span class="timeline-commit-hash" style="background: var(--accent); color: white;">HEAD v1.0.0</span>
+                <span class="timeline-date">11.10.2026</span>
+              </div>
+              <h3 class="timeline-title">release: O Casamento & O Nosso "Para Sempre" ✨</h3>
+              <p class="timeline-text">
+                O grande dia onde reunimos amigos e família para celebrar a união de Mateus & Eloisa. Que comecem as próximas aventuras!
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         INTERACTIVE CODE SANDBOX (marriage.js + Live Terminal)
+    ======================================================== -->
+    <section class="code-section" id="codigo">
+      <div class="container">
+
+        <div class="section-heading gsap-reveal" style="text-align: center; margin: 0 auto 48px; max-width: 720px;">
+          <div class="eyebrow">// LIVE COMPILATION & EXECUTION</div>
+          <h2 class="section-title" style="color: #ffffff;">
+            Nosso <span class="term-tooltip-wrap">
+              <span class="term-highlight" tabindex="0" role="button" aria-label="O que é algoritmo?">algoritmo</span>
+              <span class="term-tooltip">
+                <span class="term-tooltip-header">💡 O que é um "algoritmo"?</span>
+                <span class="term-tooltip-body">Na computação, um <strong>algoritmo</strong> é uma sequência de instruções lógicas e passos precisos para chegar a um resultado perfeito. No nosso caso, é a receita diária de amor, carinho e parceria para a vida toda!</span>
+              </span>
+            </span> de <em>amor.</em>
+          </h2>
+          <p class="section-description" style="color: #a89d92; margin: 16px auto 0;">
+            Clique em "Executar Código" e acompanhe a saída em tempo real no terminal ao lado!
+          </p>
+        </div>
+
+        <div class="code-grid-layout gsap-reveal">
+
+          <!-- Left Column: Code Editor Window -->
+          <div class="code-window">
+            <div class="code-window-bar">
+              <div class="code-tabs">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <button class="code-tab active" type="button">
+                  <span>📄</span> marriage.js
+                </button>
+                <button class="code-tab" type="button" onclick="showToast('Stack: Amor 100%, Café 95%, Cumplicidade ∞')">
+                  <span>📦</span> package.json
+                </button>
+              </div>
+
+              <button class="code-run-btn magnetic-btn ripple-effect" id="runCodeBtn" type="button">
+                <span>▶</span> Executar Código
+              </button>
+            </div>
+
+            <div class="code-body">
+              <div class="code-line"><span class="code-line-num">1</span><span class="code-line-content"><span class="code-comm">// Lifetime vows compilation</span></span></div>
+              <div class="code-line"><span class="code-line-num">2</span><span class="code-line-content"><span class="code-kw">import</span> { Love, Partnership } <span class="code-kw">from</span> <span class="code-str">"@destiny/heart"</span>;</span></div>
+              <div class="code-line"><span class="code-line-num">3</span><span class="code-line-content"></span></div>
+              <div class="code-line"><span class="code-line-num">4</span><span class="code-line-content"><span class="code-kw">const</span> couple = {</span></div>
+              <div class="code-line"><span class="code-line-num">5</span><span class="code-line-content">&nbsp;&nbsp;groom: <span class="code-str">"Mateus"</span>,</span></div>
+              <div class="code-line"><span class="code-line-num">6</span><span class="code-line-content">&nbsp;&nbsp;bride: <span class="code-str">"Eloisa"</span>,</span></div>
+              <div class="code-line"><span class="code-line-num">7</span><span class="code-line-content">&nbsp;&nbsp;weddingDate: <span class="code-kw">new</span> <span class="code-fn">Date</span>(<span class="code-str">"2026-10-11T16:00:00"</span>),</span></div>
+              <div class="code-line"><span class="code-line-num">8</span><span class="code-line-content">&nbsp;&nbsp;forever: <span class="code-kw">true</span></span></div>
+              <div class="code-line"><span class="code-line-num">9</span><span class="code-line-content">};</span></div>
+              <div class="code-line"><span class="code-line-num">10</span><span class="code-line-content"></span></div>
+              <div class="code-line"><span class="code-line-num">11</span><span class="code-line-content"><span class="code-kw">async function</span> <span class="code-fn">celebrateMarriage</span>() {</span></div>
+              <div class="code-line"><span class="code-line-num">12</span><span class="code-line-content">&nbsp;&nbsp;<span class="code-kw">const</span> vows = <span class="code-kw">await</span> Partnership.<span class="code-fn">confirm</span>(couple);</span></div>
+              <div class="code-line"><span class="code-line-num">13</span><span class="code-line-content">&nbsp;&nbsp;<span class="code-kw">return</span> <span class="code-str">`Status: ${vows.status} — Mateus & Eloisa!`</span>;</span></div>
+              <div class="code-line"><span class="code-line-num">14</span><span class="code-line-content">}</span></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Terminal Window -->
+          <div class="terminal-window">
+            <div class="terminal-window-bar">
+              <div class="terminal-tabs">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="terminal-title-text">zsh — mateus@wedding: ~ (node)</span>
+              </div>
+              <div class="terminal-status-badge" id="terminalStatusBadge">
+                <span class="status-dot"></span> IDLE
+              </div>
+            </div>
+
+            <div class="terminal-body" id="terminalBody">
+              <div class="terminal-initial-prompt">
+                <span class="term-user">mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span class="term-cmd">node marriage.js</span>
+              </div>
+              <div class="terminal-output-feed" id="terminalOutput">
+                <div class="terminal-idle-msg">
+                  <span class="code-comm">// Clique em "▶ Executar Código" para iniciar a compilação e deploy ao vivo...</span>
+                </div>
+              </div>
+              <div class="terminal-live-cursor-line">
+                <span class="term-user">mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span class="terminal-cursor">█</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         GIFTS & REGISTRY SECTION
+    ======================================================== -->
+    <section class="gifts" id="presentes">
+      <div class="container">
+
+        <div class="gifts-header-row">
+          <div class="gsap-reveal">
+            <div class="eyebrow">Gift Registry & Quotas</div>
+            <h2 class="section-title">
+              O que vocês<br />
+              querem <em>nos dar?</em>
+            </h2>
+          </div>
+
+          <p class="section-description gsap-reveal">
+            Como casar custa dinheiro e a lua de mel também, transformamos os presentes em cotas e experiências inesquecíveis. Algumas muito úteis, outras deliciosamente questionáveis.
+          </p>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="gift-filters gsap-reveal">
+          <button class="filter-btn active" data-filter="all">Todos os Presentes</button>
+          <button class="filter-btn" data-filter="lua-de-mel">✈️ Lua de Mel</button>
+          <button class="filter-btn" data-filter="romantico">🍷 Romântico</button>
+          <button class="filter-btn" data-filter="humor">🎉 Humor & Diversão</button>
+          <button class="filter-btn" data-filter="casa">🏡 Casa & Futuro</button>
+        </div>
+
+        <!-- Gift Grid -->
+        <div class="gift-grid" id="giftGrid">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+
+        <!-- LIVE RANKING -->
+        <div class="ranking-box glare-card gsap-reveal">
+          <div class="ranking-header">
+            <div>
+              <div class="eyebrow">Live Registry Ranking</div>
+              <h3 class="ranking-title">Os mais cobiçados</h3>
+            </div>
+            <button class="filter-btn magnetic-btn ripple-effect" onclick="openCustomGiftModal()">
+              ✦ Presentear com Valor Personalizado
+            </button>
+          </div>
+
+          <div class="ranking-list" id="rankingList">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         EVENT INFORMATION SECTION
+    ======================================================== -->
+    <section class="info" id="informacoes">
+      <div class="container">
+
+        <div class="section-heading gsap-reveal">
+          <div class="eyebrow">Event Information</div>
+          <h2 class="section-title">
+            Tudo o que você<br />
+            precisa <em>saber.</em>
+          </h2>
+          <p class="section-description">
+            Informações essenciais sobre data, endereço, trajes e utilitários para que você aproveite cada minuto da nossa celebração sem nenhuma dúvida.
+          </p>
+        </div>
+
+        <div class="info-grid">
+
+          <!-- Card 1: Data & Horário -->
+          <article class="info-card glare-card gsap-reveal">
+            <span class="info-idx">01 / DATE & TIME</span>
+            <div class="info-icon-large">11</div>
+            <h3 class="info-title">Data & Horário</h3>
+            <p class="info-desc">
+              <strong>11 de Outubro de 2026</strong><br />
+              Cerimônia com início pontual às <strong>16:00</strong>.<br />
+              Recomendamos chegar com 30 minutos de antecedência para se acomodar com calma.
+            </p>
+            <div class="info-card-actions">
+              <button class="info-btn magnetic-btn ripple-effect" onclick="addToGoogleCalendar()">
+                📅 Google Agenda
+              </button>
+              <button class="info-btn magnetic-btn ripple-effect" onclick="downloadIcsCalendar()">
+                🍏 Apple / iCal
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Localização -->
+          <article class="info-card glare-card gsap-reveal">
+            <span class="info-idx">02 / VENUE & ROUTE</span>
+            <div class="info-icon-large">⌖</div>
+            <h3 class="info-title">Local do Evento</h3>
+            <p class="info-desc">
+              <strong>Espaço dos Sonhos Eventos</strong><br />
+              Av. das Celebrações, 1000 — Salão Principal.<br />
+              Estacionamento no local com manobrista gratuito para todos os convidados.
+            </p>
+            <div class="info-card-actions">
+              <button class="info-btn magnetic-btn ripple-effect" onclick="openGoogleMaps()">
+                📍 Google Maps
+              </button>
+              <button class="info-btn magnetic-btn ripple-effect" onclick="openWaze()">
+                🚗 Waze
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Dress Code -->
+          <article class="info-card glare-card gsap-reveal">
+            <span class="info-idx">03 / DRESS CODE</span>
+            <div class="info-icon-large">✦</div>
+            <h3 class="info-title">Traje & Paleta</h3>
+            <p class="info-desc">
+              <strong>Passeio Completo / Esporte Fino</strong><br />
+              Cores elegantes e confortáveis. Evitar apenas trajes totalmente brancos (reservado à noiva).
+            </p>
+
+            <!-- Color Swatches Interactive -->
+            <div class="color-swatches" title="Clique nas cores para ver sugestões">
+              <div class="color-swatch" style="background: #a56e50;" onclick="showToast('Terracotta: Elegante e acolhedor')"></div>
+              <div class="color-swatch" style="background: #c29b61;" onclick="showToast('Champagne / Dourado Suave')"></div>
+              <div class="color-swatch" style="background: #5c6b54;" onclick="showToast('Verde Oliva / Sage')"></div>
+              <div class="color-swatch" style="background: #2b3a4a;" onclick="showToast('Azul Marinho Clássico')"></div>
+              <div class="color-swatch" style="background: #e3c0ab;" onclick="showToast('Rose Gold / Nude')"></div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         GUESTBOOK / RECADOS SECTION
+    ======================================================== -->
+    <section class="guestbook" id="recados">
+      <div class="container">
+
+        <div class="section-heading gsap-reveal">
+          <div class="eyebrow">Guestbook & Messages</div>
+          <h2 class="section-title">
+            Deixe um recado<br />
+            para os <em>noivos.</em>
+          </h2>
+          <p class="section-description">
+            Pode ser emocionante, divertido, uma memória nostálgica ou votos sinceros para essa nova etapa da nossa vida.
+          </p>
+        </div>
+
+        <div class="guestbook-layout">
+
+          <!-- Message Form -->
+          <form class="message-form glare-card gsap-reveal" id="messageForm">
+            <div class="form-code-tag">
+              // leave_a_message.js
+            </div>
+
+            <div class="field">
+              <label for="guestName">Seu Nome</label>
+              <input
+                id="guestName"
+                type="text"
+                maxlength="80"
+                placeholder="Ex: Seu Nome ou Família Silva"
+                required
+              />
+            </div>
+
+            <!-- Tags Selector -->
+            <div class="field">
+              <label>Categoria do Recado</label>
+              <div class="tags-selector">
+                <button type="button" class="tag-btn active" data-tag="❤️ Amor & Votos">❤️ Amor & Votos</button>
+                <button type="button" class="tag-btn" data-tag="🥂 Brinde & Festa">🥂 Brinde & Festa</button>
+                <button type="button" class="tag-btn" data-tag="🚀 Felicidades">🚀 Felicidades</button>
+                <button type="button" class="tag-btn" data-tag="💍 Conselho aos Noivos">💍 Conselho</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="guestMessage">Sua Mensagem</label>
+              <textarea
+                id="guestMessage"
+                maxlength="500"
+                placeholder="Escreva seu recado com carinho..."
+                required
+              ></textarea>
+              <div class="char-counter"><span id="charCount">0</span> / 500</div>
+            </div>
+
+            <button class="btn-glow-border ripple-effect magnetic-btn" type="submit" style="width: 100%;">
+              <span>Publicar Recado</span>
+              <span>✦</span>
+            </button>
+          </form>
+
+          <!-- Messages Wall -->
+          <div class="message-list gsap-reveal" id="messageList">
+            <!-- Messages rendered dynamically -->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <div class="footer-watermark">11.10.2026</div>
+
+    <div class="container footer-content">
+      <div class="footer-label">Deployment Date • 11.10.2026</div>
+      <h2 class="footer-title">Mateus & Eloisa</h2>
+      <p class="footer-message">
+        Obrigado por fazer parte desse momento, da nossa história e desse projeto construído com amor, café e infinitas linhas de carinho.
+      </p>
+
+      <button class="footer-back-to-top magnetic-btn ripple-effect" onclick="window.lenis ? window.lenis.scrollTo(0) : window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>↑</span> Voltar ao Início
+      </button>
+
+      <div class="footer-code-sign">
+        // Built with love, caffeine & high-grade engineering • Licensed under LOV-2.0
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       GIFT & PIX MODAL
+  ========================================================== -->
+  <div class="modal" id="giftModal" data-lenis-prevent aria-hidden="true" role="dialog">
+    <div class="modal-box glare-card" data-lenis-prevent>
+      <button class="modal-close" id="modalClose" type="button" aria-label="Fechar modal">×</button>
+
+      <div class="eyebrow">Você Selecionou</div>
+      <h2 class="modal-title" id="modalGiftTitle">Presente</h2>
+      <p class="modal-desc" id="modalGiftDescription"></p>
+
+      <div class="pix-card">
+        <span class="pix-key-label">Chave PIX (Telefone / CPF)</span>
+        <span class="pix-key-text" id="pixKeyDisplay">447.055.098-11</span>
+
+        <button class="copy-pix-btn magnetic-btn ripple-effect" id="copyPixButton" type="button">
+          <span>📋 Copiar Chave PIX</span>
+        </button>
+      </div>
+
+      <form id="giftConfirmForm">
+        <div class="field">
+          <label for="giftGuestName">Seu Nome / Nome de quem está presenteando</label>
+          <input id="giftGuestName" type="text" maxlength="80" placeholder="Ex: Lucas e Mariana" required />
+        </div>
+
+        <div class="field">
+          <label for="giftMessage">Recado Especial (Opcional)</label>
+          <textarea id="giftMessage" maxlength="400" placeholder="Deixe um recado com carinho junto com seu presente..."></textarea>
+        </div>
+
+        <button class="btn-glow-border ripple-effect magnetic-btn" type="submit" style="width: 100%;">
+          <span>Confirmar Presente 💖</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       COMMAND PALETTE MODAL (Ctrl+K)
+  ========================================================== -->
+  <div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-hidden="true">
+    <div class="cmd-modal">
+      <div class="cmd-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input class="cmd-input" id="cmdInput" type="text" placeholder="Digite um comando ou navegue..." autocomplete="off" />
+        <kbd class="cmd-badge">ESC</kbd>
+      </div>
+
+      <div class="cmd-list" id="cmdList">
+        <div class="cmd-item" data-action="navigate" data-target="#inicio">
+          <span class="cmd-item-label"><span>🏠</span> Ir para o Início</span>
+          <span class="cmd-badge">Navegação</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#countdown">
+          <span class="cmd-item-label"><span>⏱️</span> Ver Contagem Regressiva</span>
+          <span class="cmd-badge">Deploy</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#historia">
+          <span class="cmd-item-label"><span>📖</span> Ler Nossa História</span>
+          <span class="cmd-badge">História</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#timeline">
+          <span class="cmd-item-label"><span>🌿</span> Ver Git Commit Timeline</span>
+          <span class="cmd-badge">Timeline</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#codigo">
+          <span class="cmd-item-label"><span>💻</span> Executar Sandbox marriage.js</span>
+          <span class="cmd-badge">Código</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#presentes">
+          <span class="cmd-item-label"><span>🎁</span> Abrir Lista de Presentes</span>
+          <span class="cmd-badge">Presentes</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#informacoes">
+          <span class="cmd-item-label"><span>📍</span> Informações, Traje & Local</span>
+          <span class="cmd-badge">Evento</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#recados">
+          <span class="cmd-item-label"><span>💌</span> Escrever no Mural de Recados</span>
+          <span class="cmd-badge">Recados</span>
+        </div>
+        <div class="cmd-item" data-action="pix">
+          <span class="cmd-item-label"><span>🔑</span> Copiar Chave PIX</span>
+          <span class="cmd-badge">Ação</span>
+        </div>
+        <div class="cmd-item" data-action="theme">
+          <span class="cmd-item-label"><span>🌓</span> Alternar Tema Claro / Escuro</span>
+          <span class="cmd-badge">Tema</span>
+        </div>
+        <div class="cmd-item" data-action="confetti">
+          <span class="cmd-item-label"><span>🎉</span> Soltar Chuva de Confetes!</span>
+          <span class="cmd-badge">Celebração</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT APPLICATION ENGINE
+  ========================================================== -->
+  <script>
+    /* =========================================================
+       CONFIG & DATA STORE
+    ========================================================= */
+    const CONFIG = {
+      weddingDate: new Date("2026-10-11T16:00:00-03:00"),
+      engagementDate: new Date("2024-01-01T00:00:00-03:00"),
+      pixKey: "447.055.098-11",
+      coupleNames: "Mateus & Eloisa",
+      venueAddress: "Av. das Celebrações, 1000 — Espaço dos Sonhos",
+      calendarTitle: "Casamento de Mateus & Eloisa 💍",
+      calendarDesc: "Nosso grande dia! Celebração do casamento de Mateus & Eloisa."
+    };
+
+    const GIFTS_DATA = [
+      {
+        id: 1,
+        title: "Jantar Romântico à Luz de Velas",
+        price: 250,
+        category: "romantico",
+        description: "Porque depois de gastar uma pequena fortuna no casamento, a gente ainda precisa comer com classe.",
+        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 2,
+        title: "Noite de Hotel Especial",
+        price: 500,
+        category: "lua-de-mel",
+        description: "Uma noite inesquecível onde vamos fingir que somos nobres e pedir café da manhã na cama.",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 3,
+        title: "Passeio na Lua de Mel",
+        price: 750,
+        category: "lua-de-mel",
+        description: "Patrocine oficialmente duas pessoas andando por aí sem rumo e tirando 500 fotos por minuto.",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 4,
+        title: "Kit Sobrevivência Pós-Casamento",
+        price: 350,
+        category: "humor",
+        description: "Café especial, snacks de madrugada e cursos rápidos de paciência e diplomacia doméstica.",
+        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 5,
+        title: "Cota Principal da Lua de Mel",
+        price: 1500,
+        category: "lua-de-mel",
+        description: "Você estará oficialmente financiando as passagens aéreas e a fuga dos recém-casados para o paraíso.",
+        image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 6,
+        title: "Robô Aspirador Inteligente",
+        price: 900,
+        category: "casa",
+        description: "Para evitar 98% das pequenas discussões de quem é a vez de varrer a sala.",
+        image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 7,
+        title: "Presente do Desenvolvedor",
+        price: 300,
+        category: "humor",
+        description: "Nem nós sabemos exatamente o que vamos fazer com esse valor. Mas garantimos que será bem investido.",
+        image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 8,
+        title: "Air Fryer dos Nossos Sonhos",
+        price: 450,
+        category: "casa",
+        description: "O eletrodoméstico que consolida oficialmente qualquer casal no estado da vida adulta moderna.",
+        image: "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=1000&q=85"
+      },
+      {
+        id: 9,
+        title: "Degustação de Vinhos & Queijos",
+        price: 600,
+        category: "romantico",
+        description: "Uma experiência gourmet para brindarmos ao amor e fingirmos que entendemos de notas de carvalho.",
+        image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85"
+      }
+    ];
+
+    const INITIAL_MESSAGES = [];
+
+    /* =========================================================
+       DOM SELECTOR SHORTHANDS
+    ========================================================= */
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => document.querySelectorAll(s);
+
+    /* =========================================================
+       LENIS SMOOTH SCROLL INITIALIZATION
+    ========================================================= */
+    let lenis = null;
+    if (typeof Lenis !== "undefined") {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: "vertical",
+        gestureOrientation: "vertical",
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2
+      });
+
+      window.lenis = lenis;
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      if (typeof ScrollTrigger !== "undefined") {
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+    }
+
+    /* =========================================================
+       PRELOADER & LOADER LOGIC
+    ========================================================= */
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        $("#loader").classList.add("hidden");
+        initGSAPScrollAnimations();
+        triggerConfetti(window.innerWidth / 2, window.innerHeight / 3, 35);
+      }, 1500);
+    });
+
+    /* =========================================================
+       THEME CONTROLLER (LIGHT / DARK)
+    ========================================================= */
+    const themeToggleBtn = $("#themeToggleBtn");
+    const themeIcon = $("#themeIcon");
+    const themeMeta = $("#themeColorMeta");
+
+    function getSavedTheme() {
+      return localStorage.getItem("weddingTheme") || "light";
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("weddingTheme", theme);
+      if (theme === "dark") {
+        themeIcon.textContent = "☀️";
+        themeMeta.setAttribute("content", "#110e0c");
+      } else {
+        themeIcon.textContent = "🌙";
+        themeMeta.setAttribute("content", "#f7f4ee");
+      }
+    }
+
+    applyTheme(getSavedTheme());
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      showToast(`Tema ${next === "dark" ? "Escuro" : "Claro"} ativado.`);
+    });
+
+    /* =========================================================
+       SCROLL PROGRESS & HEADER SHRINK
+    ========================================================= */
+    const siteHeader = $("#siteHeader");
+    const scrollProgressBar = $("#scrollProgressBar");
+
+    window.addEventListener("scroll", () => {
+      const winScroll = document.documentElement.scrollTop || window.scrollY;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgressBar.style.width = scrolled + "%";
+
+      if (winScroll > 60) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+    }, { passive: true });
+
+    /* =========================================================
+       ACTIVE NAV SPY
+    ========================================================= */
+    const navLinks = $$(".nav a");
+    const sections = $$("section");
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          navLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach((sec) => navObserver.observe(sec));
+
+    /* =========================================================
+       MOBILE MENU DRAWER
+    ========================================================= */
+    const navToggle = $("#navToggle");
+    const mobileMenu = $("#mobileMenu");
+    const mobileNavLinks = $$(".mobile-nav-link");
+
+    navToggle.addEventListener("click", () => {
+      navToggle.classList.toggle("open");
+      mobileMenu.classList.toggle("active");
+      document.body.classList.toggle("modal-open");
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navToggle.classList.remove("open");
+        mobileMenu.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      });
+    });
+
+    /* =========================================================
+       COUNTDOWN ENGINE WITH DEPLOY PROGRESS
+    ========================================================= */
+    function updateCountdown() {
+      const now = new Date();
+      const diff = CONFIG.weddingDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        $("#days").textContent = "00";
+        $("#hours").textContent = "00";
+        $("#minutes").textContent = "00";
+        $("#seconds").textContent = "00";
+        $("#deployStatusText").textContent = "DEPLOY CONCLUÍDO! 💍";
+        $("#deployProgressBarFill").style.width = "100%";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      $("#days").textContent = String(days).padStart(2, "0");
+      $("#hours").textContent = String(hours).padStart(2, "0");
+      $("#minutes").textContent = String(minutes).padStart(2, "0");
+      $("#seconds").textContent = String(seconds).padStart(2, "0");
+
+      // Calculate deploy timeline progress
+      const totalSpan = CONFIG.weddingDate.getTime() - CONFIG.engagementDate.getTime();
+      const elapsed = now.getTime() - CONFIG.engagementDate.getTime();
+      const pct = Math.min(Math.max((elapsed / totalSpan) * 100, 10), 99.8).toFixed(1);
+
+      $("#deployPercentText").textContent = `${pct}%`;
+      $("#deployProgressBarFill").style.width = `${pct}%`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* =========================================================
+       INTERACTIVE PARTICLES CONSTELLATION CANVAS
+    ========================================================= */
+    const canvas = $("#ambientCanvas");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let mouse = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      targetX: window.innerWidth / 2,
+      targetY: window.innerHeight / 2,
+      radius: 160,
+      active: false
+    };
+
+    let shockwaves = [];
+
+    window.addEventListener("resize", () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      mouse.targetX = e.clientX;
+      mouse.targetY = e.clientY;
+      mouse.active = true;
+    }, { passive: true });
+
+    window.addEventListener("click", (e) => {
+      shockwaves.push({
+        x: e.clientX,
+        y: e.clientY,
+        radius: 5,
+        maxRadius: 180,
+        opacity: 0.8
+      });
+    });
+
+    class Particle {
+      constructor() {
+        this.reset(true);
+      }
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : height + 10;
+        this.originX = this.x;
+        this.originY = this.y;
+        this.size = Math.random() * 2.2 + 0.8;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.4 - 0.25;
+        this.opacity = Math.random() * 0.6 + 0.2;
+        this.baseHue = Math.random() > 0.4 ? 28 : 38; // Terracotta / Gold
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Interaction with mouse
+        if (mouse.active) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            const angle = Math.atan2(dy, dx);
+            this.x -= Math.cos(angle) * force * 3;
+            this.y -= Math.sin(angle) * force * 3;
+          }
+        }
+
+        // Interaction with click shockwaves
+        shockwaves.forEach((sw) => {
+          const dx = this.x - sw.x;
+          const dy = this.y - sw.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (Math.abs(dist - sw.radius) < 25) {
+            const angle = Math.atan2(dy, dx);
+            this.x += Math.cos(angle) * 4;
+            this.y += Math.sin(angle) * 4;
+          }
+        });
+
+        if (this.x < 0 || this.x > width || this.y < -20 || this.y > height + 20) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.baseHue}, 70%, 65%, ${this.opacity})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `hsla(${this.baseHue}, 70%, 65%, 0.4)`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    const numParticles = window.innerWidth > 768 ? 75 : 35;
+    for (let i = 0; i < numParticles; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateConstellation() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Smooth mouse lerp
+      mouse.x += (mouse.targetX - mouse.x) * 0.15;
+      mouse.y += (mouse.targetY - mouse.y) * 0.15;
+
+      // Update & render shockwaves
+      for (let i = shockwaves.length - 1; i >= 0; i--) {
+        const sw = shockwaves[i];
+        sw.radius += 5.5;
+        sw.opacity -= 0.02;
+
+        if (sw.opacity <= 0 || sw.radius >= sw.maxRadius) {
+          shockwaves.splice(i, 1);
+          continue;
+        }
+
+        ctx.beginPath();
+        ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(165, 110, 80, ${sw.opacity * 0.5})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Draw lines between proximate particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 110) {
+            const alpha = (1 - dist / 110) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(194, 155, 97, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+
+        // Draw connections to mouse
+        if (mouse.active) {
+          const mdx = particles[i].x - mouse.x;
+          const mdy = particles[i].y - mouse.y;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < 130) {
+            const mAlpha = (1 - mdist / 130) * 0.35;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(216, 153, 115, ${mAlpha})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+
+        particles[i].update();
+        particles[i].draw();
+      }
+
+      requestAnimationFrame(animateConstellation);
+    }
+    animateConstellation();
+
+    /* =========================================================
+       CURSOR SPOTLIGHT & CUSTOM </> CODE CURSOR INTERACTION
+    ========================================================= */
+    const spotlight = $("#cursorSpotlight");
+    const codeCursor = $("#codeCursor");
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let spotX = mouseX;
+    let spotY = mouseY;
+    let curX = mouseX;
+    let curY = mouseY;
+    let isCursorVisible = false;
+
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isCursorVisible) {
+        isCursorVisible = true;
+        if (codeCursor) codeCursor.classList.add("visible");
+      }
+    }, { passive: true });
+
+    document.addEventListener("mouseleave", () => {
+      isCursorVisible = false;
+      if (codeCursor) codeCursor.classList.remove("visible");
+    });
+
+    document.addEventListener("mouseenter", () => {
+      isCursorVisible = true;
+      if (codeCursor) codeCursor.classList.add("visible");
+    });
+
+    window.addEventListener("mousedown", () => {
+      if (codeCursor) codeCursor.classList.add("clicking");
+    });
+
+    window.addEventListener("mouseup", () => {
+      if (codeCursor) codeCursor.classList.remove("clicking");
+    });
+
+    const interactiveSelectors = "a, button, input, textarea, select, .magnetic-btn, .glare-card, .filter-btn, .cmd-item, .tag-btn, .like-btn, .info-btn, .copy-pix-btn, [role='button']";
+    
+    document.addEventListener("mouseover", (e) => {
+      if (codeCursor && e.target.closest(interactiveSelectors)) {
+        codeCursor.classList.add("hovering");
+      }
+    });
+
+    document.addEventListener("mouseout", (e) => {
+      if (codeCursor && e.target.closest(interactiveSelectors)) {
+        codeCursor.classList.remove("hovering");
+      }
+    });
+
+    function renderCursorAndSpotlight() {
+      spotX += (mouseX - spotX) * 0.12;
+      spotY += (mouseY - spotY) * 0.12;
+      spotlight.style.transform = `translate(${spotX}px, ${spotY}px) translate(-50%, -50%)`;
+
+      curX += (mouseX - curX) * 0.24;
+      curY += (mouseY - curY) * 0.24;
+      if (codeCursor) {
+        codeCursor.style.left = `${curX}px`;
+        codeCursor.style.top = `${curY}px`;
+      }
+
+      requestAnimationFrame(renderCursorAndSpotlight);
+    }
+    renderCursorAndSpotlight();
+
+    /* =========================================================
+       MAGNETIC BUTTONS & HOLOGRAPHIC GLARE CARDS
+    ========================================================= */
+    $$(".magnetic-btn").forEach((btn) => {
+      btn.addEventListener("mousemove", (e) => {
+        if (window.innerWidth <= 768) return;
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.28}px, ${y * 0.28}px)`;
+      });
+
+      btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "translate(0px, 0px)";
+      });
+    });
+
+    // Cards clean hover bindings
+    function bindGlareCards() {
+      // Kept flat and solid without 3D tilt
+    }
+    bindGlareCards();
+
+    // Ripple click wave on buttons
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".ripple-effect");
+      if (!target) return;
+      const rect = target.getBoundingClientRect();
+      const circle = document.createElement("span");
+      const diameter = Math.max(rect.width, rect.height);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${e.clientX - rect.left - radius}px`;
+      circle.style.top = `${e.clientY - rect.top - radius}px`;
+      circle.classList.add("ripple-wave");
+
+      const existing = target.querySelector(".ripple-wave");
+      if (existing) existing.remove();
+
+      target.appendChild(circle);
+    });
+
+    /* =========================================================
+       GSAP SCROLLTRIGGER ANIMATIONS
+    ========================================================= */
+    function initGSAPScrollAnimations() {
+      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero content parallax on scroll
+      gsap.to("#heroContent", {
+        y: 120,
+        opacity: 0.15,
+        scale: 0.95,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+
+      // Hero code tag floating parallax
+      gsap.to("#heroCodeTag", {
+        y: 60,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "50% top",
+          scrub: 1
+        }
+      });
+
+      // Animate all .gsap-reveal elements
+      $$(".gsap-reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+
+      // Story image smooth zoom scrub
+      gsap.fromTo(
+        "#storyImage",
+        { scale: 1.15, y: "-10%" },
+        {
+          scale: 1,
+          y: "0%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".story",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.5
+          }
+        }
+      );
+
+      // Timeline line progressive growth
+      gsap.fromTo(
+        "#timelineProgressLine",
+        { scaleY: 0, transformOrigin: "top" },
+        {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".timeline-wrap",
+            start: "top 70%",
+            end: "bottom 70%",
+            scrub: 1
+          }
+        }
+      );
+    }
+
+    /* =========================================================
+       CANVAS CONFETTI HELPER
+    ========================================================= */
+    function triggerConfetti(originX, originY, count = 40) {
+      if (typeof confetti === "function") {
+        confetti({
+          particleCount: count,
+          spread: 70,
+          origin: {
+            x: originX / window.innerWidth,
+            y: originY / window.innerHeight
+          },
+          colors: ["#a56e50", "#c29b61", "#e09f7a", "#34d399", "#f43f5e", "#ffd166", "#ffffff"]
+        });
+      }
+    }
+
+    /* =========================================================
+       INTERACTIVE MARRIAGE.JS CODE RUNNER
+    ========================================================= */
+    const runCodeBtn = $("#runCodeBtn");
+    const terminalOutput = $("#terminalOutput");
+    const terminalStatusBadge = $("#terminalStatusBadge");
+
+    runCodeBtn.addEventListener("click", () => {
+      terminalOutput.innerHTML = "";
+      if (terminalStatusBadge) {
+        terminalStatusBadge.className = "terminal-status-badge running";
+        terminalStatusBadge.innerHTML = '<span class="status-dot" style="background:#fbbf24;box-shadow:0 0 8px #fbbf24;"></span> RUNNING...';
+      }
+
+      const logs = [
+        { text: "✔ Initializing environment: Production node v20.11", delay: 250, class: "terminal-log-success" },
+        { text: "✔ Verifying couple compatibility... 100.0% match ♥", delay: 650, class: "terminal-log-success" },
+        { text: "✔ Loading vows & lifelong partnership contract...", delay: 1100, class: "" },
+        { text: "✔ Deploying ceremony on 11.10.2026 at 16:00...", delay: 1600, class: "terminal-log-highlight" },
+        { text: "♥ RESULT: Status 200 OK — Mateus & Eloisa juntos para sempre! ✨💍", delay: 2100, class: "terminal-log-heart" }
+      ];
+
+      logs.forEach((log) => {
+        setTimeout(() => {
+          const p = document.createElement("div");
+          p.className = `terminal-log-line ${log.class}`;
+          p.textContent = log.text;
+          terminalOutput.appendChild(p);
+
+          const termBody = $("#terminalBody");
+          if (termBody) termBody.scrollTop = termBody.scrollHeight;
+        }, log.delay);
+      });
+
+      setTimeout(() => {
+        if (terminalStatusBadge) {
+          terminalStatusBadge.className = "terminal-status-badge";
+          terminalStatusBadge.innerHTML = '<span class="status-dot"></span> STATUS 200 OK';
+        }
+        const rect = runCodeBtn.getBoundingClientRect();
+        triggerConfetti(rect.left + rect.width / 2, rect.top, 60);
+        showToast("Código compilado e executado! 100% Amor.");
+      }, 2300);
+    });
+
+    /* =========================================================
+       GIFTS & CONTRIBUTIONS SYSTEM (LOCALSTORAGE)
+    ========================================================= */
+    // Purge legacy test data from earlier dev sessions
+    try {
+      localStorage.removeItem("weddingMessages");
+      localStorage.removeItem("weddingContributions");
+    } catch {}
+
+    function getContributions() {
+      try {
+        return JSON.parse(localStorage.getItem("wedding_prod_contributions") || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function saveContributions(list) {
+      localStorage.setItem("wedding_prod_contributions", JSON.stringify(list));
+    }
+
+    let activeFilter = "all";
+
+    function renderGifts() {
+      const grid = $("#giftGrid");
+      const contributions = getContributions();
+      grid.innerHTML = "";
+
+      const filtered = GIFTS_DATA.filter((g) => {
+        if (activeFilter === "all") return true;
+        return g.category === activeFilter;
+      });
+
+      filtered.forEach((gift, idx) => {
+        const count = contributions.filter((c) => c.giftId === gift.id).length;
+        const progressPct = Math.min(count * 35, 100);
+
+        const card = document.createElement("article");
+        card.className = "gift-card glare-card gsap-reveal";
+        card.innerHTML = `
+          <div class="gift-image-wrap">
+            <img class="gift-image" src="${gift.image}" alt="${escapeHTML(gift.title)}" loading="lazy" />
+            <span class="gift-badge-cat">${gift.category}</span>
+            <div class="gift-number">${String(idx + 1).padStart(2, "0")}</div>
+          </div>
+          <div class="gift-body">
+            <h3 class="gift-title">${escapeHTML(gift.title)}</h3>
+            <p class="gift-description">${escapeHTML(gift.description)}</p>
+
+            <div class="gift-progress-wrap">
+              <div class="gift-status-line">
+                <span>${count > 0 ? `${count} ${count === 1 ? 'pessoa presenteou' : 'pessoas presentearam'}` : 'Seja o primeiro a presentear'}</span>
+                <span>${count > 0 ? `${progressPct}%` : 'Disponível'}</span>
+              </div>
+              <div class="gift-track">
+                <div class="gift-track-fill" style="width: ${progressPct}%;"></div>
+              </div>
+            </div>
+
+            <div class="gift-footer">
+              <span class="gift-price">${formatCurrency(gift.price)}</span>
+              <button class="gift-btn ripple-effect magnetic-btn" type="button" onclick="openGiftModal(${gift.id})">
+                <span>Presentear</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      bindGlareCards();
+      renderRanking();
+    }
+
+    // Filter Buttons Listener
+    $$(".filter-btn[data-filter]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        $$(".filter-btn[data-filter]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeFilter = btn.dataset.filter;
+        renderGifts();
+      });
+    });
+
+    function renderRanking() {
+      const list = $("#rankingList");
+      const contributions = getContributions();
+      const counts = {};
+
+      GIFTS_DATA.forEach((g) => (counts[g.id] = 0));
+      contributions.forEach((c) => {
+        if (counts[c.giftId] !== undefined) counts[c.giftId]++;
+      });
+
+      list.innerHTML = "";
+
+      if (contributions.length === 0) {
+        list.innerHTML = `
+          <div style="padding: 20px 0; color: var(--muted); font-size: 12px; font-family: var(--mono); text-align: center; line-height: 1.6;">
+            // Nenhum presente registrado ainda.<br />Seja o primeiro a presentear!
+          </div>
+        `;
+        return;
+      }
+
+      const sorted = [...GIFTS_DATA].filter((g) => counts[g.id] > 0).sort((a, b) => counts[b.id] - counts[a.id]);
+
+      if (sorted.length === 0) {
+        list.innerHTML = `
+          <div style="padding: 20px 0; color: var(--muted); font-size: 12px; font-family: var(--mono); text-align: center; line-height: 1.6;">
+            // Nenhum presente registrado ainda.<br />Seja o primeiro a presentear!
+          </div>
+        `;
+        return;
+      }
+
+      sorted.slice(0, 5).forEach((gift, idx) => {
+        const item = document.createElement("div");
+        item.className = "ranking-item";
+        item.innerHTML = `
+          <span class="ranking-pos">#0${idx + 1}</span>
+          <span class="ranking-name">${escapeHTML(gift.title)}</span>
+          <span class="ranking-count">${counts[gift.id]} ${counts[gift.id] === 1 ? 'escolha' : 'escolhas'}</span>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    /* =========================================================
+       GIFT MODAL & PIX COPY
+    ========================================================= */
+    const giftModal = $("#giftModal");
+    let currentSelectedGift = null;
+
+    function openGiftModal(giftId) {
+      currentSelectedGift = GIFTS_DATA.find((g) => g.id === giftId);
+      if (!currentSelectedGift) return;
+
+      $("#modalGiftTitle").textContent = currentSelectedGift.title;
+      $("#modalGiftDescription").textContent = `${currentSelectedGift.description} • Valor sugerido: ${formatCurrency(currentSelectedGift.price)}`;
+
+      giftModal.classList.add("active");
+      giftModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      if (window.lenis) window.lenis.stop();
+    }
+
+    function openCustomGiftModal() {
+      currentSelectedGift = {
+        id: 999,
+        title: "Cota com Valor Personalizado",
+        price: 0,
+        description: "Envie qualquer valor de coração via PIX e registre seu recado para os noivos."
+      };
+      $("#modalGiftTitle").textContent = currentSelectedGift.title;
+      $("#modalGiftDescription").textContent = currentSelectedGift.description;
+
+      giftModal.classList.add("active");
+      giftModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      if (window.lenis) window.lenis.stop();
+    }
+
+    function closeGiftModal() {
+      giftModal.classList.remove("active");
+      giftModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      $("#giftConfirmForm").reset();
+      currentSelectedGift = null;
+      if (window.lenis) window.lenis.start();
+    }
+
+    $("#modalClose").addEventListener("click", closeGiftModal);
+    giftModal.addEventListener("click", (e) => {
+      if (e.target === giftModal) closeGiftModal();
+    });
+
+    const modalBoxEl = $(".modal-box");
+    if (modalBoxEl) {
+      modalBoxEl.addEventListener("wheel", (e) => {
+        e.stopPropagation();
+      }, { passive: true });
+    }
+
+    // Copy Pix Button
+    $("#copyPixButton").addEventListener("click", async (e) => {
+      try {
+        await navigator.clipboard.writeText(CONFIG.pixKey);
+        showToast("Chave PIX copiada com sucesso!");
+        const rect = e.target.getBoundingClientRect();
+        triggerConfetti(rect.left + rect.width / 2, rect.top, 30);
+      } catch {
+        showToast("Selecione e copie a chave manualmente: " + CONFIG.pixKey);
+      }
+    });
+
+    // Gift Confirm Form
+    $("#giftConfirmForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!currentSelectedGift) return;
+
+      const name = $("#giftGuestName").value.trim();
+      const message = $("#giftMessage").value.trim();
+
+      if (!name) return;
+
+      const contributions = getContributions();
+      contributions.push({
+        id: Date.now(),
+        giftId: currentSelectedGift.id,
+        giftTitle: currentSelectedGift.title,
+        guestName: name,
+        message: message,
+        createdAt: new Date().toISOString()
+      });
+      saveContributions(contributions);
+
+      if (message) {
+        const messages = getMessages();
+        messages.push({
+          id: Date.now() + 1,
+          name: name,
+          tag: "🎁 Presente Registrado",
+          message: `${message} (Presente: ${currentSelectedGift.title})`,
+          likes: 1,
+          createdAt: new Date().toISOString()
+        });
+        saveMessages(messages);
+        renderMessages();
+      }
+
+      closeGiftModal();
+      renderGifts();
+
+      triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 70);
+      showToast("Presente registrado com sucesso! Muito obrigado pelo carinho ❤️");
+    });
+
+    /* =========================================================
+       GUESTBOOK / MESSAGES SYSTEM
+    ========================================================= */
+    function getMessages() {
+      try {
+        const saved = localStorage.getItem("wedding_prod_messages");
+        if (saved) return JSON.parse(saved);
+        return [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveMessages(msgs) {
+      localStorage.setItem("wedding_prod_messages", JSON.stringify(msgs));
+    }
+
+    let selectedMessageTag = "❤️ Amor & Votos";
+
+    $$(".tags-selector .tag-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        $$(".tags-selector .tag-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedMessageTag = btn.dataset.tag;
+      });
+    });
+
+    const guestMessageInput = $("#guestMessage");
+    const charCount = $("#charCount");
+    guestMessageInput.addEventListener("input", () => {
+      charCount.textContent = guestMessageInput.value.length;
+    });
+
+    function renderMessages() {
+      const container = $("#messageList");
+      const messages = getMessages();
+      container.innerHTML = "";
+
+      if (messages.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 48px 24px; background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius-md);">
+            <div style="font-size: 36px; margin-bottom: 12px;">💌</div>
+            <h4 style="font-family: var(--serif); font-size: 22px; color: var(--ink); margin-bottom: 8px;">Seja o primeiro a deixar um recado!</h4>
+            <p style="font-size: 13px; color: var(--muted); max-width: 420px; margin: 0 auto; line-height: 1.6;">
+              Envie seus votos de felicidade, carinho e bênçãos para Mateus & Eloisa através do formulário ao lado.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      [...messages].reverse().forEach((msg) => {
+        const card = document.createElement("article");
+        card.className = "message-card";
+        const dateStr = formatMessageDate(msg.createdAt);
+
+        card.innerHTML = `
+          <div class="message-card-top">
+            <div class="message-author">${escapeHTML(msg.name)}</div>
+            <div class="message-time">${dateStr}</div>
+          </div>
+          <span class="message-tag-badge">${escapeHTML(msg.tag || "❤️ Mensagem")}</span>
+          <p class="message-text">${escapeHTML(msg.message)}</p>
+          <div class="message-card-footer">
+            <button class="like-btn" type="button" onclick="likeMessage(${msg.id}, this)">
+              <span>♥</span>
+              <span class="like-num">${msg.likes || 0}</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function likeMessage(msgId, btn) {
+      const messages = getMessages();
+      const item = messages.find((m) => m.id === msgId);
+      if (item) {
+        item.likes = (item.likes || 0) + 1;
+        saveMessages(messages);
+        btn.classList.add("liked");
+        btn.querySelector(".like-num").textContent = item.likes;
+        const rect = btn.getBoundingClientRect();
+        triggerConfetti(rect.left + rect.width / 2, rect.top, 20);
+      }
+    }
+
+    $("#messageForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = $("#guestName").value.trim();
+      const message = $("#guestMessage").value.trim();
+
+      if (!name || !message) return;
+
+      const messages = getMessages();
+      messages.push({
+        id: Date.now(),
+        name: name,
+        tag: selectedMessageTag,
+        message: message,
+        likes: 1,
+        createdAt: new Date().toISOString()
+      });
+      saveMessages(messages);
+
+      $("#messageForm").reset();
+      charCount.textContent = "0";
+      renderMessages();
+
+      const rect = e.target.querySelector("button[type='submit']").getBoundingClientRect();
+      triggerConfetti(rect.left + rect.width / 2, rect.top, 50);
+      showToast("Seu recado foi publicado no mural! 💌");
+    });
+
+    /* =========================================================
+       CALENDAR & MAPS INTEGRATION
+    ========================================================= */
+    function addToGoogleCalendar() {
+      const start = "20261011T190000Z";
+      const end = "20261012T020000Z";
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(CONFIG.calendarTitle)}&dates=${start}/${end}&details=${encodeURIComponent(CONFIG.calendarDesc)}&location=${encodeURIComponent(CONFIG.venueAddress)}`;
+      window.open(url, "_blank");
+      showToast("Abrindo Google Calendar...");
+    }
+
+    function downloadIcsCalendar() {
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Mateus e Eloisa Casamento//PT",
+        "BEGIN:VEVENT",
+        "SUMMARY:Casamento de Mateus & Eloisa 💍",
+        "DESCRIPTION:Celebração do casamento de Mateus e Eloisa.",
+        "LOCATION:Av. das Celebrações, 1000 - Espaço dos Sonhos",
+        "DTSTART:20261011T190000Z",
+        "DTEND:20261012T020000Z",
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute("download", "casamento-mateus-e-eloisa.ics");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Arquivo do calendário baixado!");
+    }
+
+    function openGoogleMaps() {
+      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.venueAddress)}`;
+      window.open(url, "_blank");
+    }
+
+    function openWaze() {
+      const url = `https://waze.com/ul?q=${encodeURIComponent(CONFIG.venueAddress)}`;
+      window.open(url, "_blank");
+    }
+
+    /* =========================================================
+       COMMAND PALETTE (Ctrl+K / ⌘K)
+    ========================================================= */
+    const cmdOverlay = $("#cmdOverlay");
+    const cmdInput = $("#cmdInput");
+    const cmdTriggerBtn = $("#cmdTriggerBtn");
+    const cmdList = $("#cmdList");
+
+    function openCommandPalette() {
+      cmdOverlay.classList.add("active");
+      cmdOverlay.setAttribute("aria-hidden", "false");
+      cmdInput.value = "";
+      filterCmdItems("");
+      setTimeout(() => cmdInput.focus(), 50);
+    }
+
+    function closeCommandPalette() {
+      cmdOverlay.classList.remove("active");
+      cmdOverlay.setAttribute("aria-hidden", "true");
+    }
+
+    cmdTriggerBtn.addEventListener("click", openCommandPalette);
+
+    window.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        if (cmdOverlay.classList.contains("active")) {
+          closeCommandPalette();
+        } else {
+          openCommandPalette();
+        }
+      }
+      if (e.key === "Escape") {
+        if (cmdOverlay.classList.contains("active")) closeCommandPalette();
+        if (giftModal.classList.contains("active")) closeGiftModal();
+      }
+    });
+
+    cmdOverlay.addEventListener("click", (e) => {
+      if (e.target === cmdOverlay) closeCommandPalette();
+    });
+
+    function filterCmdItems(query) {
+      const q = query.toLowerCase();
+      $$(".cmd-item").forEach((item) => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(q)) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    cmdInput.addEventListener("input", (e) => {
+      filterCmdItems(e.target.value);
+    });
+
+    cmdList.addEventListener("click", (e) => {
+      const item = e.target.closest(".cmd-item");
+      if (!item) return;
+      const action = item.dataset.action;
+
+      if (action === "navigate") {
+        const target = item.dataset.target;
+        closeCommandPalette();
+        const el = $(target);
+        if (el) {
+          if (window.lenis) {
+            window.lenis.scrollTo(el);
+          } else {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      } else if (action === "pix") {
+        closeCommandPalette();
+        navigator.clipboard.writeText(CONFIG.pixKey);
+        showToast("Chave PIX copiada!");
+        triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 35);
+      } else if (action === "theme") {
+        closeCommandPalette();
+        const cur = document.documentElement.getAttribute("data-theme");
+        applyTheme(cur === "dark" ? "light" : "dark");
+        showToast("Tema alternado.");
+      } else if (action === "confetti") {
+        closeCommandPalette();
+        triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 90);
+        showToast("🎉 Viva os noivos!");
+      }
+    });
+
+    /* =========================================================
+       TOAST SYSTEM
+    ========================================================= */
+    function showToast(msg) {
+      const container = $("#toastContainer");
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.innerHTML = `<span>✦</span><span>${escapeHTML(msg)}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => toast.classList.add("show"), 20);
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    /* =========================================================
+       FORMATTING HELPERS
+    ========================================================= */
+    function formatCurrency(val) {
+      return val.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
+
+    function escapeHTML(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function formatMessageDate(isoStr) {
+      try {
+        const d = new Date(isoStr);
+        return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+      } catch {
+        return "Hoje";
+      }
+    }
+
+    /* =========================================================
+       SOFTWARE ENGINEER CONSOLE EASTER EGG
+    ========================================================= */
+    console.log(
+      "%c { Mateus & Eloisa — 11.10.2026 } %c\n\nBem-vindo ao console de desenvolvimento do nosso casamento!\nStack: HTML5, CSS3, GSAP ScrollTrigger, Lenis Smooth Scroll, Canvas Confetti & Puro Amor.\n\nExperimente rodar no console: %ccelebrateWedding()%c",
+      "background: #a56e50; color: #fff; font-size: 16px; font-weight: bold; padding: 6px 12px; border-radius: 4px;",
+      "color: #73685e; font-size: 13px;",
+      "background: #27c93f; color: #000; font-weight: bold; padding: 2px 6px; border-radius: 3px;",
+      "color: #73685e;"
+    );
+
+    window.celebrateWedding = function() {
+      triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 120);
+      return "🎉 Viva Mateus & Eloisa! O deploy para a vida toda está garantido!";
+    };
+
+    /* =========================================================
+       INITIALIZE APP
+    ========================================================= */
+    renderGifts();
+    renderMessages();
+  </script>
+
+</body>
+</html>
