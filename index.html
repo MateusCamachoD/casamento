@@ -502,25 +502,27 @@
 
     .term-tooltip {
       position: absolute;
-      bottom: calc(100% + 14px);
+      bottom: calc(100% + 12px);
       left: 50%;
       transform: translateX(-50%) translateY(8px);
-      width: min(340px, 85vw);
+      width: min(290px, 85vw);
+      max-width: calc(100vw - 32px);
+      box-sizing: border-box;
       background: var(--code-bg);
       color: #ded6cf;
       border: 1px solid var(--accent);
       border-radius: var(--radius-md);
-      padding: 16px 20px;
-      font-size: 13px;
+      padding: 14px 16px;
+      font-size: 12px;
       font-family: var(--sans);
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.55;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
       transition: all 0.3s var(--ease-bounce);
-      z-index: 100;
+      z-index: 1000;
       text-align: left;
       letter-spacing: normal;
     }
@@ -1708,6 +1710,24 @@
     .gift-card {
       display: flex;
       flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
+      opacity: 1 !important;
+      animation: giftCardFadeIn 0.35s ease forwards;
+    }
+
+    @keyframes giftCardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .gift-image-wrap {
@@ -2626,8 +2646,6 @@
        SCROLL REVEAL GSAP UTILITIES
     ========================================================= */
     .gsap-reveal {
-      opacity: 0;
-      transform: translateY(45px);
       will-change: opacity, transform;
     }
 
@@ -2643,16 +2661,16 @@
     @media (max-width: 1024px) {
       .countdown-layout {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
       }
 
       .story-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 50px;
       }
 
       .story-media {
-        height: 480px;
+        height: 440px;
       }
 
       .gift-grid {
@@ -2672,9 +2690,32 @@
       }
     }
 
+    @media (max-width: 992px) {
+      .code-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .code-window-bar,
+      .terminal-window-bar {
+        padding: 12px 16px;
+      }
+
+      .code-body {
+        padding: 20px 16px;
+        font-size: 11.5px;
+      }
+
+      .terminal-body {
+        padding: 18px 16px;
+        font-size: 11px;
+        max-height: 340px;
+      }
+    }
+
     @media (max-width: 768px) {
       section {
-        padding: 90px 0;
+        padding: 70px 0;
       }
 
       .nav,
@@ -2688,10 +2729,11 @@
 
       .hero {
         background-attachment: scroll;
+        padding-top: 100px;
       }
 
       .hero h1 {
-        font-size: clamp(56px, 16vw, 90px);
+        font-size: clamp(52px, 15vw, 84px);
       }
 
       .hero-date {
@@ -2708,45 +2750,131 @@
         bottom: 20px;
       }
 
+      .countdown-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .countdown-intro {
+        text-align: center;
+      }
+
+      .countdown-intro .section-description {
+        margin: 12px auto 0;
+      }
+
+      .deploy-progress-box {
+        margin-top: 24px;
+        padding: 16px;
+      }
+
       .countdown-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
 
       .count-card {
-        padding: 24px 12px;
+        padding: 20px 10px;
       }
 
       .count-number {
-        font-size: 44px;
+        font-size: clamp(36px, 11vw, 48px);
+      }
+
+      .count-label {
+        margin-top: 8px;
+        font-size: 9px;
+      }
+
+      .gift-filters {
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .filter-btn {
+        padding: 8px 14px;
+        font-size: 11px;
       }
 
       .gift-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
 
       .info-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
 
       .ranking-box {
-        padding: 28px 20px;
+        padding: 24px 16px;
       }
 
       .ranking-item {
-        grid-template-columns: 32px 1fr auto;
-        gap: 12px;
+        grid-template-columns: 28px 1fr auto;
+        gap: 10px;
       }
 
       .ranking-name {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .modal-box {
-        padding: 30px 20px;
+        padding: 26px 16px;
       }
 
       .footer {
-        padding-top: 100px;
+        padding-top: 80px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .code-window-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+      }
+
+      .code-tabs {
+        justify-content: flex-start;
+      }
+
+      .code-run-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 9px 16px;
+      }
+
+      .code-body {
+        padding: 16px 12px;
+        font-size: 10.5px;
+        line-height: 1.75;
+      }
+
+      .code-line {
+        gap: 8px;
+      }
+
+      .code-line-num {
+        width: 16px;
+        font-size: 9.5px;
+      }
+
+      .terminal-window-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px;
+      }
+
+      .terminal-title-text {
+        font-size: 10px;
+      }
+
+      .terminal-body {
+        padding: 14px 12px;
+        font-size: 10.5px;
+        max-height: 300px;
       }
     }
 
@@ -4312,7 +4440,7 @@
       grid.innerHTML = "";
 
       const filtered = GIFTS_DATA.filter((g) => {
-        if (activeFilter === "all") return true;
+        if (!activeFilter || activeFilter === "all") return true;
         return g.category === activeFilter;
       });
 
@@ -4321,7 +4449,7 @@
         const progressPct = Math.min(count * 35, 100);
 
         const card = document.createElement("article");
-        card.className = "gift-card glare-card gsap-reveal";
+        card.className = "gift-card";
         card.innerHTML = `
           <div class="gift-image-wrap">
             <img class="gift-image" src="${gift.image}" alt="${escapeHTML(gift.title)}" loading="lazy" />
@@ -4354,16 +4482,19 @@
         grid.appendChild(card);
       });
 
-      bindGlareCards();
       renderRanking();
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
     }
 
     // Filter Buttons Listener
     $$(".filter-btn[data-filter]").forEach((btn) => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
         $$(".filter-btn[data-filter]").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-        activeFilter = btn.dataset.filter;
+        activeFilter = btn.dataset.filter || "all";
         renderGifts();
       });
     });
