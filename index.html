@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Eloisa & Mateus — Casamento em 11.10.2026" />
   <meta property="og:description" content="Duas pessoas. Uma história. Uma decisão definitiva de construir a vida juntos." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=90" />
+  <meta property="og:image" content="assets/eloisa-e-mateus.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -957,8 +957,8 @@
       overflow: hidden;
       color: #ffffff;
       background:
-        linear-gradient(180deg, rgba(16, 12, 10, 0.35) 0%, rgba(16, 12, 10, 0.75) 100%),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=90") center/cover no-repeat;
+        linear-gradient(180deg, rgba(16, 12, 10, 0.42) 0%, rgba(16, 12, 10, 0.72) 100%),
+        url("assets/hero-eloisa-e-mateus.jpg") center center / cover no-repeat;
       position: relative;
       padding-top: 100px;
     }
@@ -1122,21 +1122,35 @@
 
     .hero-code-tag {
       position: absolute;
-      left: 36px;
-      bottom: 36px;
-      color: rgba(255, 255, 255, 0.6);
+      left: 48px;
+      bottom: 72px;
+      color: #ded6cf;
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.8;
-      background: rgba(20, 16, 14, 0.45);
-      backdrop-filter: blur(10px);
-      padding: 12px 18px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(16, 12, 10, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 20px rgba(165, 110, 80, 0.15);
+      z-index: 5;
+      transition: border-color 0.3s ease, transform 0.3s var(--ease-out);
+    }
+
+    .hero-code-tag:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
     }
 
     .hero-code-tag .hl {
-      color: #e3b092;
+      color: #f6ad55;
+      font-weight: 600;
+    }
+
+    .hero-code-tag .hl-str {
+      color: #6ee7b7;
     }
 
     @keyframes scrollLineAnim {
@@ -1284,10 +1298,10 @@
 
     .story-media img {
       width: 100%;
-      height: 115%;
+      height: 100%;
       object-fit: cover;
-      transform: translateY(-8%);
-      transition: transform 0.2s linear;
+      object-position: center 15%;
+      transition: transform 0.3s ease;
     }
 
     .story-media-badge {
@@ -2611,6 +2625,8 @@
     .cmd-list {
       max-height: 340px;
       overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
       padding: 10px;
       display: grid;
       gap: 4px;
@@ -2773,6 +2789,7 @@
 
       .hero {
         background-attachment: scroll;
+        background-position: center 30%;
         padding-top: 100px;
       }
 
@@ -3082,8 +3099,8 @@
 
       <div class="hero-code-tag" id="heroCodeTag">
         <div><span class="hl">const</span> relationship = {</div>
-        <div>&nbsp;&nbsp;couple: <span class="hl">"Eloisa & Mateus"</span>,</div>
-        <div>&nbsp;&nbsp;future: <span class="hl">"forever"</span></div>
+        <div>&nbsp;&nbsp;couple: <span class="hl-str">"Eloisa & Mateus"</span>,</div>
+        <div>&nbsp;&nbsp;future: <span class="hl-str">"forever"</span></div>
         <div>};</div>
       </div>
 
@@ -3162,8 +3179,8 @@
           <div class="story-media glare-card">
             <img
               id="storyImage"
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=90"
-              alt="Eloisa & Mateus"
+              src="assets/eloisa-e-mateus.jpg"
+              alt="Eloisa & Mateus — O Pedido"
               loading="lazy"
             />
             <div class="story-media-badge">
@@ -3683,8 +3700,8 @@
   <!-- =========================================================
        COMMAND PALETTE MODAL (Ctrl+K)
   ========================================================== -->
-  <div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-hidden="true">
-    <div class="cmd-modal">
+  <div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-hidden="true" data-lenis-prevent>
+    <div class="cmd-modal" data-lenis-prevent>
       <div class="cmd-input-wrap">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
@@ -3694,7 +3711,7 @@
         <kbd class="cmd-badge">ESC</kbd>
       </div>
 
-      <div class="cmd-list" id="cmdList">
+      <div class="cmd-list" id="cmdList" data-lenis-prevent>
         <div class="cmd-item" data-action="navigate" data-target="#inicio">
           <span class="cmd-item-label"><span>🏠</span> Ir para o Início</span>
           <span class="cmd-badge">Navegação</span>
@@ -4366,14 +4383,14 @@
         }
       });
 
-      // Hero code tag floating parallax
+      // Hero code tag floating parallax (smooth & visible)
       gsap.to("#heroCodeTag", {
-        y: 60,
-        opacity: 0,
+        y: 40,
+        opacity: 0.25,
         scrollTrigger: {
           trigger: ".hero",
           start: "top top",
-          end: "50% top",
+          end: "bottom top",
           scrub: 1
         }
       });
@@ -4918,6 +4935,8 @@
     function openCommandPalette() {
       cmdOverlay.classList.add("active");
       cmdOverlay.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      if (window.lenis) window.lenis.stop();
       cmdInput.value = "";
       filterCmdItems("");
       setTimeout(() => cmdInput.focus(), 50);
@@ -4926,6 +4945,14 @@
     function closeCommandPalette() {
       cmdOverlay.classList.remove("active");
       cmdOverlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      if (window.lenis) window.lenis.start();
+    }
+
+    if (cmdList) {
+      cmdList.addEventListener("wheel", (e) => {
+        e.stopPropagation();
+      }, { passive: true });
     }
 
     cmdTriggerBtn.addEventListener("click", openCommandPalette);
