@@ -1714,48 +1714,60 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       overflow: hidden;
-      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
       opacity: 1 !important;
       animation: giftCardFadeIn 0.35s ease forwards;
+      cursor: pointer;
+      position: relative;
     }
 
-    @keyframes giftCardFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .gift-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px var(--accent-glow), 0 10px 24px -6px rgba(0, 0, 0, 0.12);
+      border-color: var(--accent);
     }
 
     .gift-image-wrap {
       position: relative;
-      height: 185px;
+      height: 195px;
       overflow: hidden;
       background: var(--bg-alt);
+    }
+
+    .gift-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(20, 16, 14, 0.45) 100%);
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .gift-card:hover .gift-image-wrap::after {
+      opacity: 0.8;
     }
 
     .gift-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s var(--ease-out), filter 0.6s ease;
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
     }
 
     .gift-card:hover .gift-image {
       transform: scale(1.08);
-      filter: brightness(0.95);
+      filter: brightness(0.96) saturate(1.08);
     }
 
     .gift-badge-cat {
       position: absolute;
       top: 12px;
       left: 12px;
-      padding: 4px 10px;
-      background: rgba(20, 16, 14, 0.65);
-      backdrop-filter: blur(10px);
+      padding: 5px 11px;
+      background: rgba(20, 16, 14, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #ffffff;
       font-family: var(--mono);
       font-size: 9px;
@@ -1763,28 +1775,46 @@
       text-transform: uppercase;
       border-radius: var(--radius-sm);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .gift-card:hover .gift-badge-cat {
+      border-color: var(--accent);
+      background: rgba(20, 16, 14, 0.9);
+      color: #fff;
     }
 
     .gift-number {
       position: absolute;
       top: 12px;
       right: 12px;
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       display: grid;
       place-items: center;
-      background: rgba(20, 16, 14, 0.65);
-      backdrop-filter: blur(10px);
+      background: rgba(20, 16, 14, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #ffffff;
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 600;
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .gift-card:hover .gift-number {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      transform: scale(1.08);
     }
 
     .gift-body {
-      padding: 20px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -1794,8 +1824,13 @@
       font-family: var(--serif);
       font-size: 21px;
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.2;
       color: var(--ink);
+      transition: color 0.3s ease;
+    }
+
+    .gift-card:hover .gift-title {
+      color: var(--accent);
     }
 
     .gift-description {
@@ -1849,29 +1884,38 @@
       font-size: 24px;
       font-weight: 700;
       color: var(--ink);
+      transition: color 0.3s ease;
     }
 
     .gift-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: var(--radius-full);
       background: var(--ink);
       color: var(--surface);
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       transition: all 0.3s var(--ease-bounce);
     }
 
-    .gift-btn:hover {
+    .gift-btn span:last-child {
+      transition: transform 0.3s var(--ease-bounce);
+    }
+
+    .gift-card:hover .gift-btn {
       background: var(--accent);
       color: #ffffff;
-      transform: translateY(-2px) scale(1.05);
       box-shadow: 0 6px 20px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .gift-card:hover .gift-btn span:last-child {
+      transform: translateX(4px);
     }
 
     /* Ranking Box */
@@ -3312,7 +3356,7 @@
               <div class="code-line"><span class="code-line-num">4</span><span class="code-line-content"><span class="code-kw">const</span> couple = {</span></div>
               <div class="code-line"><span class="code-line-num">5</span><span class="code-line-content">&nbsp;&nbsp;bride: <span class="code-str">"Eloisa"</span>,</span></div>
               <div class="code-line"><span class="code-line-num">6</span><span class="code-line-content">&nbsp;&nbsp;groom: <span class="code-str">"Mateus"</span>,</span></div>
-              <div class="code-line"><span class="code-line-num">7</span><span class="code-line-content">&nbsp;&nbsp;weddingDate: <span class="code-kw">new</span> <span class="code-fn">Date</span>(<span class="code-str">"2026-10-11T16:00:00"</span>),</span></div>
+              <div class="code-line"><span class="code-line-num">7</span><span class="code-line-content">&nbsp;&nbsp;weddingDate: <span class="code-kw">new</span> <span class="code-fn">Date</span>(<span class="code-str">"2026-10-11T10:00:00"</span>),</span></div>
               <div class="code-line"><span class="code-line-num">8</span><span class="code-line-content">&nbsp;&nbsp;forever: <span class="code-kw">true</span></span></div>
               <div class="code-line"><span class="code-line-num">9</span><span class="code-line-content">};</span></div>
               <div class="code-line"><span class="code-line-num">10</span><span class="code-line-content"></span></div>
@@ -3440,15 +3484,12 @@
             <h3 class="info-title">Data & Horário</h3>
             <p class="info-desc">
               <strong>11 de Outubro de 2026</strong><br />
-              Cerimônia com início pontual às <strong>16:00</strong>.<br />
+              Cerimônia com início pontual às <strong>10:00 da manhã</strong>.<br />
               Recomendamos chegar com 30 minutos de antecedência para se acomodar com calma.
             </p>
             <div class="info-card-actions">
               <button class="info-btn magnetic-btn ripple-effect" onclick="addToGoogleCalendar()">
-                📅 Google Agenda
-              </button>
-              <button class="info-btn magnetic-btn ripple-effect" onclick="downloadIcsCalendar()">
-                🍏 Apple / iCal
+                📅 Adicionar à Agenda
               </button>
             </div>
           </article>
@@ -3459,13 +3500,13 @@
             <div class="info-icon-large">⌖</div>
             <h3 class="info-title">Local do Evento</h3>
             <p class="info-desc">
-              <strong>Espaço dos Sonhos Eventos</strong><br />
-              Av. das Celebrações, 1000 — Salão Principal.<br />
-              Estacionamento no local com manobrista gratuito para todos os convidados.
+              <strong>Secção São Miguel</strong><br />
+              Francisco Beltrão — PR.<br />
+              Clique abaixo para abrir a rota direta no mapa do Google ou no Waze.
             </p>
             <div class="info-card-actions">
               <button class="info-btn magnetic-btn ripple-effect" onclick="openGoogleMaps()">
-                📍 Google Maps
+                📍 Abrir no Maps
               </button>
               <button class="info-btn magnetic-btn ripple-effect" onclick="openWaze()">
                 🚗 Waze
@@ -3479,8 +3520,8 @@
             <div class="info-icon-large">✦</div>
             <h3 class="info-title">Traje & Paleta</h3>
             <p class="info-desc">
-              <strong>Passeio Completo / Esporte Fino</strong><br />
-              Cores elegantes e confortáveis. Evitar apenas trajes totalmente brancos (reservado à noiva).
+              <strong>Venham confortáveis, coloridos e à vontade!</strong><br />
+              Queremos todo mundo se sentindo leve, alegre e feliz para celebrar esse dia tão especial junto com a gente. Tragam sua melhor energia e venham prontos para curtir muito!
             </p>
 
             <!-- Color Swatches Interactive -->
@@ -3715,13 +3756,15 @@
        CONFIG & DATA STORE
     ========================================================= */
     const CONFIG = {
-      weddingDate: new Date("2026-10-11T16:00:00-03:00"),
+      weddingDate: new Date("2026-10-11T10:00:00-03:00"),
       engagementDate: new Date("2024-01-01T00:00:00-03:00"),
       pixKey: "447.055.098-11",
       coupleNames: "Eloisa & Mateus",
-      venueAddress: "Av. das Celebrações, 1000 — Espaço dos Sonhos",
+      venueName: "Secção São Miguel",
+      venueAddress: "Secção São Miguel, Francisco Beltrão - PR",
+      mapsUrl: "https://share.google/iLuIXO7Dr7RAQHXCT",
       calendarTitle: "Casamento de Eloisa & Mateus 💍",
-      calendarDesc: "Nosso grande dia! Celebração do casamento de Eloisa & Mateus."
+      calendarDesc: "Nosso grande dia! Celebração do casamento de Eloisa & Mateus em Secção São Miguel, Francisco Beltrão - PR."
     };
 
     const GIFTS_DATA = [
@@ -3902,27 +3945,60 @@
     }, { passive: true });
 
     /* =========================================================
-       ACTIVE NAV SPY
+       ACTIVE NAV SPY (Continuous & Ultra-Precise)
     ========================================================= */
     const navLinks = $$(".nav a");
-    const sections = $$("section");
+    const mobileNavLinksList = $$(".mobile-nav-link");
+    const spySections = Array.from($$("section[id]"));
 
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
-          navLinks.forEach((link) => {
-            if (link.getAttribute("href") === `#${id}`) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
+    function updateActiveNavSpy() {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop;
+      const headerOffset = 180;
+
+      let currentSectionId = "";
+
+      for (let i = 0; i < spySections.length; i++) {
+        const sec = spySections[i];
+        const top = sec.offsetTop - headerOffset;
+        const bottom = top + sec.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          currentSectionId = sec.getAttribute("id");
+          break;
         }
-      });
-    }, { threshold: 0.35 });
+      }
 
-    sections.forEach((sec) => navObserver.observe(sec));
+      // If at bottom of page, activate last section
+      if ((window.innerHeight + scrollPos) >= document.documentElement.scrollHeight - 80) {
+        if (spySections.length > 0) {
+          currentSectionId = spySections[spySections.length - 1].getAttribute("id");
+        }
+      }
+
+      if (currentSectionId) {
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${currentSectionId}`) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+
+        mobileNavLinksList.forEach((link) => {
+          if (link.getAttribute("href") === `#${currentSectionId}`) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+    }
+
+    window.addEventListener("scroll", updateActiveNavSpy, { passive: true });
+    if (typeof lenis !== "undefined" && lenis) {
+      lenis.on("scroll", updateActiveNavSpy);
+    }
+    setTimeout(updateActiveNavSpy, 100);
 
     /* =========================================================
        MOBILE MENU DRAWER
@@ -4390,7 +4466,7 @@
         { text: "✔ Initializing environment: Production node v20.11", delay: 250, class: "terminal-log-success" },
         { text: "✔ Verifying couple compatibility... 100.0% match ♥", delay: 650, class: "terminal-log-success" },
         { text: "✔ Loading vows & lifelong partnership contract...", delay: 1100, class: "" },
-        { text: "✔ Deploying ceremony on 11.10.2026 at 16:00...", delay: 1600, class: "terminal-log-highlight" },
+        { text: "✔ Deploying ceremony on 11.10.2026 at 10:00...", delay: 1600, class: "terminal-log-highlight" },
         { text: "♥ RESULT: Status 200 OK — Eloisa & Mateus juntos para sempre! ✨💍", delay: 2100, class: "terminal-log-heart" }
       ];
 
@@ -4456,6 +4532,17 @@
 
         const card = document.createElement("article");
         card.className = "gift-card";
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("aria-label", `Presentear com ${escapeHTML(gift.title)}`);
+        card.onclick = () => openGiftModal(gift.id);
+        card.onkeydown = (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openGiftModal(gift.id);
+          }
+        };
+
         card.innerHTML = `
           <div class="gift-image-wrap">
             <img class="gift-image" src="${gift.image}" alt="${escapeHTML(gift.title)}" loading="lazy" />
@@ -4478,7 +4565,7 @@
 
             <div class="gift-footer">
               <span class="gift-price">${formatCurrency(gift.price)}</span>
-              <button class="gift-btn ripple-effect magnetic-btn" type="button" onclick="openGiftModal(${gift.id})">
+              <button class="gift-btn ripple-effect" type="button" tabindex="-1">
                 <span>Presentear</span>
                 <span>→</span>
               </button>
@@ -4777,8 +4864,8 @@
        CALENDAR & MAPS INTEGRATION
     ========================================================= */
     function addToGoogleCalendar() {
-      const start = "20261011T190000Z";
-      const end = "20261012T020000Z";
+      const start = "20261011T130000Z";
+      const end = "20261011T210000Z";
       const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(CONFIG.calendarTitle)}&dates=${start}/${end}&details=${encodeURIComponent(CONFIG.calendarDesc)}&location=${encodeURIComponent(CONFIG.venueAddress)}`;
       window.open(url, "_blank");
       showToast("Abrindo Google Calendar...");
@@ -4792,9 +4879,9 @@
         "BEGIN:VEVENT",
         "SUMMARY:Casamento de Eloisa & Mateus 💍",
         "DESCRIPTION:Celebração do casamento de Eloisa e Mateus.",
-        "LOCATION:Av. das Celebrações, 1000 - Espaço dos Sonhos",
-        "DTSTART:20261011T190000Z",
-        "DTEND:20261012T020000Z",
+        "LOCATION:Secção São Miguel - Francisco Beltrão, PR",
+        "DTSTART:20261011T130000Z",
+        "DTEND:20261011T210000Z",
         "STATUS:CONFIRMED",
         "END:VEVENT",
         "END:VCALENDAR"
@@ -4811,12 +4898,12 @@
     }
 
     function openGoogleMaps() {
-      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.venueAddress)}`;
+      const url = CONFIG.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.venueAddress)}`;
       window.open(url, "_blank");
     }
 
     function openWaze() {
-      const url = `https://waze.com/ul?q=${encodeURIComponent(CONFIG.venueAddress)}`;
+      const url = `https://waze.com/ul?q=${encodeURIComponent(CONFIG.venueAddress)}&navigate=yes`;
       window.open(url, "_blank");
     }
 
