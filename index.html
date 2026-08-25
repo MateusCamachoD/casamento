@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eloisa & Mateus — 11.10.2026 | Nosso Casamento</title>
 
-  <meta
-    name="description"
-    content="Eloisa & Mateus — nosso grande dia, 11 de outubro de 2026. Acompanhe a contagem regressiva, lista de presentes, informações do evento e deixe seu recado."
-  />
+  <meta name="description"
+    content="Eloisa & Mateus — nosso grande dia, 11 de outubro de 2026. Acompanhe a contagem regressiva, lista de presentes, informações do evento e deixe seu recado." />
   <meta name="theme-color" content="#f6f2ec" id="themeColorMeta" />
 
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Eloisa & Mateus — Casamento em 11.10.2026" />
-  <meta property="og:description" content="Duas pessoas. Uma história. Uma decisão definitiva de construir a vida juntos." />
+  <meta property="og:description"
+    content="Duas pessoas. Uma história. Uma decisão definitiva de construir a vida juntos." />
   <meta property="og:image" content="assets/eloisa-e-mateus.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <!-- External Animation & FX Libraries (CDN) -->
   <!-- GSAP Core & ScrollTrigger -->
@@ -131,7 +135,18 @@
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Cfilter id='shadow'%3E%3CfeDropShadow dx='0' dy='1' stdDeviation='1.5' flood-color='%23000000' flood-opacity='0.45'/%3E%3C/filter%3E%3Crect x='2' y='6' width='30' height='22' rx='6' fill='%231e1916' stroke='%23a56e50' stroke-width='1.5' filter='url(%23shadow)'/%3E%3Ctext x='17' y='21.5' font-family='monospace' font-size='12' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3E%26lt%3B/%26gt%3B%3C/text%3E%3C/svg%3E") 17 17, auto;
     }
 
-    button, a, input, textarea, select, .magnetic-btn, .tilt-card, .filter-btn, .cmd-item, .tag-btn, .like-btn, [role="button"] {
+    button,
+    a,
+    input,
+    textarea,
+    select,
+    .magnetic-btn,
+    .tilt-card,
+    .filter-btn,
+    .cmd-item,
+    .tag-btn,
+    .like-btn,
+    [role="button"] {
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Cfilter id='shadow2'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='2' flood-color='%23a56e50' flood-opacity='0.6'/%3E%3C/filter%3E%3Crect x='2' y='6' width='30' height='22' rx='6' fill='%23a56e50' stroke='%23ffffff' stroke-width='1.5' filter='url(%23shadow2)'/%3E%3Ctext x='17' y='21.5' font-family='monospace' font-size='12' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3E%26lt%3B/%26gt%3B%3C/text%3E%3C/svg%3E") 17 17, pointer !important;
     }
 
@@ -183,7 +198,8 @@
       transform: translate(-50%, -50%) scale(0.75);
     }
 
-    @media (pointer: coarse), (max-width: 768px) {
+    @media (pointer: coarse),
+    (max-width: 768px) {
       .code-cursor {
         display: none !important;
       }
@@ -192,7 +208,9 @@
     /* =========================================================
        RESET & BASE STYLES
     ========================================================= */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -224,7 +242,10 @@
       height: auto;
     }
 
-    button, input, textarea, select {
+    button,
+    input,
+    textarea,
+    select {
       font: inherit;
       color: inherit;
     }
@@ -428,8 +449,13 @@
     }
 
     @keyframes rotateGlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* Ripple Click Wave Effect */
@@ -605,9 +631,17 @@
       border-radius: 50%;
     }
 
-    .loader-dot:nth-child(1) { background: #ff5f56; }
-    .loader-dot:nth-child(2) { background: #ffbd2e; }
-    .loader-dot:nth-child(3) { background: #27c93f; }
+    .loader-dot:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    .loader-dot:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .loader-dot:nth-child(3) {
+      background: #27c93f;
+    }
 
     .loader-title {
       font-family: var(--mono);
@@ -623,10 +657,21 @@
       margin-bottom: 8px;
     }
 
-    .loader-code .kw { color: #e09f7a; }
-    .loader-code .str { color: #d4c28f; }
-    .loader-code .fn { color: #b8c7db; }
-    .loader-code .comm { color: #7e7368; }
+    .loader-code .kw {
+      color: #e09f7a;
+    }
+
+    .loader-code .str {
+      color: #d4c28f;
+    }
+
+    .loader-code .fn {
+      color: #b8c7db;
+    }
+
+    .loader-code .comm {
+      color: #7e7368;
+    }
 
     .loader-progress-wrap {
       margin-top: 24px;
@@ -657,10 +702,21 @@
     }
 
     @keyframes loaderProgressAnim {
-      0% { width: 0%; }
-      40% { width: 65%; }
-      80% { width: 90%; }
-      100% { width: 100%; }
+      0% {
+        width: 0%;
+      }
+
+      40% {
+        width: 65%;
+      }
+
+      80% {
+        width: 90%;
+      }
+
+      100% {
+        width: 100%;
+      }
     }
 
     /* =========================================================
@@ -835,9 +891,11 @@
     .nav-toggle.open span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
+
     .nav-toggle.open span:nth-child(2) {
       opacity: 0;
     }
+
     .nav-toggle.open span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
@@ -1007,8 +1065,17 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.35); opacity: 0.7; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.35);
+        opacity: 0.7;
+      }
     }
 
     .hero h1 {
@@ -1154,11 +1221,14 @@
     }
 
     @keyframes scrollLineAnim {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.2;
         transform: scaleY(0.4);
         transform-origin: top;
       }
+
       50% {
         opacity: 1;
         transform: scaleY(1);
@@ -1597,10 +1667,23 @@
       color: #ded6cf;
     }
 
-    .code-kw { color: var(--code-kw); font-weight: 600; }
-    .code-str { color: var(--code-str); }
-    .code-fn { color: var(--code-fn); }
-    .code-comm { color: var(--code-comm); font-style: italic; }
+    .code-kw {
+      color: var(--code-kw);
+      font-weight: 600;
+    }
+
+    .code-str {
+      color: var(--code-str);
+    }
+
+    .code-fn {
+      color: var(--code-fn);
+    }
+
+    .code-comm {
+      color: var(--code-comm);
+      font-style: italic;
+    }
 
     /* Live Terminal Window */
     .terminal-body {
@@ -1617,9 +1700,19 @@
       max-height: 440px;
     }
 
-    .term-user { color: #34d399; font-weight: 600; }
-    .term-path { color: #60a5fa; }
-    .term-cmd { color: #f3f4f6; font-weight: 600; }
+    .term-user {
+      color: #34d399;
+      font-weight: 600;
+    }
+
+    .term-path {
+      color: #60a5fa;
+    }
+
+    .term-cmd {
+      color: #f3f4f6;
+      font-weight: 600;
+    }
 
     .terminal-output-feed {
       display: flex;
@@ -1637,9 +1730,21 @@
       animation: terminalLineSlide 0.3s var(--ease-out) forwards;
     }
 
-    .terminal-log-success { color: #34d399; font-weight: 500; }
-    .terminal-log-highlight { color: #e09f7a; }
-    .terminal-log-heart { color: #f43f5e; font-weight: 700; font-size: 13px; text-shadow: 0 0 12px rgba(244, 63, 94, 0.4); }
+    .terminal-log-success {
+      color: #34d399;
+      font-weight: 500;
+    }
+
+    .terminal-log-highlight {
+      color: #e09f7a;
+    }
+
+    .terminal-log-heart {
+      color: #f43f5e;
+      font-weight: 700;
+      font-size: 13px;
+      text-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+    }
 
     .terminal-live-cursor-line {
       display: flex;
@@ -1654,13 +1759,27 @@
     }
 
     @keyframes blinkCursor {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     @keyframes terminalLineSlide {
-      from { opacity: 0; transform: translateX(-6px); }
-      to { opacity: 1; transform: translateX(0); }
+      from {
+        opacity: 0;
+        transform: translateX(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     @media (max-width: 992px) {
@@ -1752,7 +1871,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(20, 16, 14, 0.45) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(20, 16, 14, 0.45) 100%);
       opacity: 0.5;
       transition: opacity 0.4s ease;
       pointer-events: none;
@@ -2940,12 +3059,16 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
+
       .gsap-reveal {
         opacity: 1 !important;
         transform: none !important;
@@ -3025,7 +3148,8 @@
 
       <div class="header-actions">
         <!-- Theme Toggle -->
-        <button class="btn-icon magnetic-btn" id="themeToggleBtn" aria-label="Alternar Tema Claro/Escuro" title="Alternar tema">
+        <button class="btn-icon magnetic-btn" id="themeToggleBtn" aria-label="Alternar Tema Claro/Escuro"
+          title="Alternar tema">
           <span id="themeIcon">🌙</span>
         </button>
 
@@ -3087,11 +3211,11 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#presentes" class="btn-glow-border ripple-effect magnetic-btn">
-            <span>🎁 Lista de Presentes</span>
-          </a>
-          <a href="#historia" class="btn-secondary-glass ripple-effect magnetic-btn">
+          <a href="#historia" class="btn-glow-border ripple-effect magnetic-btn">
             <span>📖 Nossa História</span>
+          </a>
+          <a href="#presentes" class="btn-secondary-glass ripple-effect magnetic-btn">
+            <span>🎁 Lista de Presentes</span>
           </a>
         </div>
 
@@ -3123,12 +3247,15 @@
               <em class="term-highlight" tabindex="0" role="button" aria-label="O que é deploy?">deploy.</em>
               <span class="term-tooltip">
                 <span class="term-tooltip-header">💡 O que é um "deploy"?</span>
-                <span class="term-tooltip-body">Na engenharia de software, <strong>deploy</strong> é o grande momento em que o projeto sai dos bastidores e vai oficialmente ao ar no mundo real. No nosso caso, é a celebração do nosso casamento!</span>
+                <span class="term-tooltip-body">Na engenharia de software, <strong>deploy</strong> é o grande momento em
+                  que o projeto sai dos bastidores e vai oficialmente ao ar no mundo real. No nosso caso, é a celebração
+                  do nosso casamento!</span>
               </span>
             </span>
           </h2>
           <p class="section-description">
-            Após incontáveis sprints de planejamento, ajustes finos e muito carinho, nossa cerimônia está prestes a entrar em produção oficial.
+            Após incontáveis sprints de planejamento, ajustes finos e muito carinho, nossa cerimônia está prestes a
+            entrar em produção oficial.
           </p>
 
           <!-- Deploy Progress Bar -->
@@ -3177,12 +3304,7 @@
 
         <div class="story-media-wrap gsap-reveal">
           <div class="story-media glare-card">
-            <img
-              id="storyImage"
-              src="assets/eloisa-e-mateus.jpg"
-              alt="Eloisa & Mateus — O Pedido"
-              loading="lazy"
-            />
+            <img id="storyImage" src="assets/eloisa-e-mateus.jpg" alt="Eloisa & Mateus — O Pedido" loading="lazy" />
             <div class="story-media-badge">
               <span>✦ Eloisa & Mateus</span>
               <span>•</span>
@@ -3205,21 +3327,27 @@
           </h2>
 
           <p>
-            Toda grande história de amor possui aquele ponto de inflexão exato: o momento em que duas vidas independentes decidem compartilhar o mesmo <span class="term-tooltip-wrap">
-              <span class="term-highlight" tabindex="0" role="button" aria-label="O que é código-fonte?">código-fonte</span>
+            Toda grande história de amor possui aquele ponto de inflexão exato: o momento em que duas vidas
+            independentes decidem compartilhar o mesmo <span class="term-tooltip-wrap">
+              <span class="term-highlight" tabindex="0" role="button"
+                aria-label="O que é código-fonte?">código-fonte</span>
               <span class="term-tooltip">
                 <span class="term-tooltip-header">💡 O que é "código-fonte"?</span>
-                <span class="term-tooltip-body">Na programação, o <strong>código-fonte</strong> é a base fundamental e a essência pura de qualquer sistema. Para nós, significa compartilhar a mesma essência de vida, propósitos e valores construídos juntos!</span>
+                <span class="term-tooltip-body">Na programação, o <strong>código-fonte</strong> é a base fundamental e a
+                  essência pura de qualquer sistema. Para nós, significa compartilhar a mesma essência de vida,
+                  propósitos e valores construídos juntos!</span>
               </span>
             </span>, os mesmos sonhos e todas as risadas.
           </p>
 
           <p>
-            Entre conversas que varavam a madrugada, cafés compartilhados e planos desenhados em folhas soltas, descobrimos que a nossa melhor versão existe quando estamos lado a lado.
+            Entre conversas que varavam a madrugada, cafés compartilhados e planos desenhados em folhas soltas,
+            descobrimos que a nossa melhor versão existe quando estamos lado a lado.
           </p>
 
           <p>
-            No dia 11 de outubro de 2026, celebramos diante de quem mais amamos o passo mais lindo da nossa jornada. Obrigado por estar aqui com a gente!
+            No dia 11 de outubro de 2026, celebramos diante de quem mais amamos o passo mais lindo da nossa jornada.
+            Obrigado por estar aqui com a gente!
           </p>
 
           <div class="signature-wrap">
@@ -3244,12 +3372,15 @@
               <span class="term-highlight" tabindex="0" role="button" aria-label="O que é commit?">commits</span>
               <span class="term-tooltip">
                 <span class="term-tooltip-header">💡 O que é um "commit"?</span>
-                <span class="term-tooltip-body">No desenvolvimento de software, um <strong>commit</strong> é o registro definitivo de um momento ou alteração importante, salvo para sempre no histórico. Aqui, são os grandes marcos do nosso amor!</span>
+                <span class="term-tooltip-body">No desenvolvimento de software, um <strong>commit</strong> é o registro
+                  definitivo de um momento ou alteração importante, salvo para sempre no histórico. Aqui, são os grandes
+                  marcos do nosso amor!</span>
               </span>
             </span> mais <em>marcantes.</em>
           </h2>
           <p class="section-description">
-            O histórico de versões da nossa história: cada marco importante que nos trouxe até o lançamento da versão 1.0.0.
+            O histórico de versões da nossa história: cada marco importante que nos trouxe até o lançamento da versão
+            1.0.0.
           </p>
         </div>
 
@@ -3266,7 +3397,8 @@
               </div>
               <h3 class="timeline-title">Initial commit: O primeiro olhar</h3>
               <p class="timeline-text">
-                O dia em que nossos caminhos se cruzaram pela primeira vez. Uma conversa que começou despretensiosa e logo virou a certeza de que algo muito especial estava nascendo.
+                O dia em que nossos caminhos se cruzaram pela primeira vez. Uma conversa que começou despretensiosa e
+                logo virou a certeza de que algo muito especial estava nascendo.
               </p>
             </div>
           </div>
@@ -3281,7 +3413,8 @@
               </div>
               <h3 class="timeline-title">feat(travel): A primeira viagem juntos</h3>
               <p class="timeline-text">
-                Malas arrumadas, GPS confuso e as memórias mais divertidas que poderíamos colecionar. Ali descobrimos que qualquer destino é perfeito na companhia certa.
+                Malas arrumadas, GPS confuso e as memórias mais divertidas que poderíamos colecionar. Ali descobrimos
+                que qualquer destino é perfeito na companhia certa.
               </p>
             </div>
           </div>
@@ -3296,7 +3429,8 @@
               </div>
               <h3 class="timeline-title">merge 'namoro' into 'noivado': O Pedido 💍</h3>
               <p class="timeline-text">
-                Coração acelerado, palavras ensaiadas mil vezes (e esquecidas na hora da emoção) e o "SIM" mais emocionante e definitivo das nossas vidas.
+                Coração acelerado, palavras ensaiadas mil vezes (e esquecidas na hora da emoção) e o "SIM" mais
+                emocionante e definitivo das nossas vidas.
               </p>
             </div>
           </div>
@@ -3311,7 +3445,8 @@
               </div>
               <h3 class="timeline-title">release: O Casamento & O Nosso "Para Sempre" ✨</h3>
               <p class="timeline-text">
-                O grande dia onde reunimos amigos e família para celebrar a união de Eloisa & Mateus. Que comecem as próximas aventuras!
+                O grande dia onde reunimos amigos e família para celebrar a união de Eloisa & Mateus. Que comecem as
+                próximas aventuras!
               </p>
             </div>
           </div>
@@ -3335,7 +3470,9 @@
               <span class="term-highlight" tabindex="0" role="button" aria-label="O que é algoritmo?">algoritmo</span>
               <span class="term-tooltip">
                 <span class="term-tooltip-header">💡 O que é um "algoritmo"?</span>
-                <span class="term-tooltip-body">Na computação, um <strong>algoritmo</strong> é uma sequência de instruções lógicas e passos precisos para chegar a um resultado perfeito. No nosso caso, é a receita diária de amor, carinho e parceria para a vida toda!</span>
+                <span class="term-tooltip-body">Na computação, um <strong>algoritmo</strong> é uma sequência de
+                  instruções lógicas e passos precisos para chegar a um resultado perfeito. No nosso caso, é a receita
+                  diária de amor, carinho e parceria para a vida toda!</span>
               </span>
             </span> de <em>amor.</em>
           </h2>
@@ -3356,7 +3493,8 @@
                 <button class="code-tab active" type="button">
                   <span>📄</span> marriage.js
                 </button>
-                <button class="code-tab" type="button" onclick="showToast('Stack: Amor 100%, Café 95%, Cumplicidade ∞')">
+                <button class="code-tab" type="button"
+                  onclick="showToast('Stack: Amor 100%, Café 95%, Cumplicidade ∞')">
                   <span>📦</span> package.json
                 </button>
               </div>
@@ -3367,19 +3505,34 @@
             </div>
 
             <div class="code-body">
-              <div class="code-line"><span class="code-line-num">1</span><span class="code-line-content"><span class="code-comm">// Lifetime vows compilation</span></span></div>
-              <div class="code-line"><span class="code-line-num">2</span><span class="code-line-content"><span class="code-kw">import</span> { Love, Partnership } <span class="code-kw">from</span> <span class="code-str">"@destiny/heart"</span>;</span></div>
+              <div class="code-line"><span class="code-line-num">1</span><span class="code-line-content"><span
+                    class="code-comm">// Lifetime vows compilation</span></span></div>
+              <div class="code-line"><span class="code-line-num">2</span><span class="code-line-content"><span
+                    class="code-kw">import</span> { Love, Partnership } <span class="code-kw">from</span> <span
+                    class="code-str">"@destiny/heart"</span>;</span></div>
               <div class="code-line"><span class="code-line-num">3</span><span class="code-line-content"></span></div>
-              <div class="code-line"><span class="code-line-num">4</span><span class="code-line-content"><span class="code-kw">const</span> couple = {</span></div>
-              <div class="code-line"><span class="code-line-num">5</span><span class="code-line-content">&nbsp;&nbsp;bride: <span class="code-str">"Eloisa"</span>,</span></div>
-              <div class="code-line"><span class="code-line-num">6</span><span class="code-line-content">&nbsp;&nbsp;groom: <span class="code-str">"Mateus"</span>,</span></div>
-              <div class="code-line"><span class="code-line-num">7</span><span class="code-line-content">&nbsp;&nbsp;weddingDate: <span class="code-kw">new</span> <span class="code-fn">Date</span>(<span class="code-str">"2026-10-11T10:00:00"</span>),</span></div>
-              <div class="code-line"><span class="code-line-num">8</span><span class="code-line-content">&nbsp;&nbsp;forever: <span class="code-kw">true</span></span></div>
+              <div class="code-line"><span class="code-line-num">4</span><span class="code-line-content"><span
+                    class="code-kw">const</span> couple = {</span></div>
+              <div class="code-line"><span class="code-line-num">5</span><span
+                  class="code-line-content">&nbsp;&nbsp;bride: <span class="code-str">"Eloisa"</span>,</span></div>
+              <div class="code-line"><span class="code-line-num">6</span><span
+                  class="code-line-content">&nbsp;&nbsp;groom: <span class="code-str">"Mateus"</span>,</span></div>
+              <div class="code-line"><span class="code-line-num">7</span><span
+                  class="code-line-content">&nbsp;&nbsp;weddingDate: <span class="code-kw">new</span> <span
+                    class="code-fn">Date</span>(<span class="code-str">"2026-10-11T10:00:00"</span>),</span></div>
+              <div class="code-line"><span class="code-line-num">8</span><span
+                  class="code-line-content">&nbsp;&nbsp;forever: <span class="code-kw">true</span></span></div>
               <div class="code-line"><span class="code-line-num">9</span><span class="code-line-content">};</span></div>
               <div class="code-line"><span class="code-line-num">10</span><span class="code-line-content"></span></div>
-              <div class="code-line"><span class="code-line-num">11</span><span class="code-line-content"><span class="code-kw">async function</span> <span class="code-fn">celebrateMarriage</span>() {</span></div>
-              <div class="code-line"><span class="code-line-num">12</span><span class="code-line-content">&nbsp;&nbsp;<span class="code-kw">const</span> vows = <span class="code-kw">await</span> Partnership.<span class="code-fn">confirm</span>(couple);</span></div>
-              <div class="code-line"><span class="code-line-num">13</span><span class="code-line-content">&nbsp;&nbsp;<span class="code-kw">return</span> <span class="code-str">`Status: ${vows.status} — Eloisa & Mateus!`</span>;</span></div>
+              <div class="code-line"><span class="code-line-num">11</span><span class="code-line-content"><span
+                    class="code-kw">async function</span> <span class="code-fn">celebrateMarriage</span>() {</span>
+              </div>
+              <div class="code-line"><span class="code-line-num">12</span><span
+                  class="code-line-content">&nbsp;&nbsp;<span class="code-kw">const</span> vows = <span
+                    class="code-kw">await</span> Partnership.<span class="code-fn">confirm</span>(couple);</span></div>
+              <div class="code-line"><span class="code-line-num">13</span><span
+                  class="code-line-content">&nbsp;&nbsp;<span class="code-kw">return</span> <span
+                    class="code-str">`Status: ${vows.status} — Eloisa & Mateus!`</span>;</span></div>
               <div class="code-line"><span class="code-line-num">14</span><span class="code-line-content">}</span></div>
             </div>
           </div>
@@ -3400,15 +3553,18 @@
 
             <div class="terminal-body" id="terminalBody">
               <div class="terminal-initial-prompt">
-                <span class="term-user">eloisa-mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span class="term-cmd">node marriage.js</span>
+                <span class="term-user">eloisa-mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span
+                  class="term-cmd">node marriage.js</span>
               </div>
               <div class="terminal-output-feed" id="terminalOutput">
                 <div class="terminal-idle-msg">
-                  <span class="code-comm">// Clique em "▶ Executar Código" para iniciar a compilação e deploy ao vivo...</span>
+                  <span class="code-comm">// Clique em "▶ Executar Código" para iniciar a compilação e deploy ao
+                    vivo...</span>
                 </div>
               </div>
               <div class="terminal-live-cursor-line">
-                <span class="term-user">eloisa-mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span class="terminal-cursor">█</span>
+                <span class="term-user">eloisa-mateus@wedding</span>:<span class="term-path">~/marriage</span>$ <span
+                  class="terminal-cursor">█</span>
               </div>
             </div>
           </div>
@@ -3435,17 +3591,9 @@
           </div>
 
           <p class="section-description gsap-reveal">
-            Como casar custa dinheiro e a lua de mel também, transformamos os presentes em cotas e experiências inesquecíveis. Algumas muito úteis, outras deliciosamente questionáveis.
+            Como casar custa dinheiro e a lua de mel também, transformamos os presentes em cotas e experiências
+            inesquecíveis. Algumas muito úteis, outras deliciosamente questionáveis.
           </p>
-        </div>
-
-        <!-- Filter Tags -->
-        <div class="gift-filters gsap-reveal">
-          <button class="filter-btn active" data-filter="all">Todos os Presentes</button>
-          <button class="filter-btn" data-filter="lua-de-mel">✈️ Lua de Mel</button>
-          <button class="filter-btn" data-filter="romantico">🍷 Romântico</button>
-          <button class="filter-btn" data-filter="humor">🎉 Humor & Diversão</button>
-          <button class="filter-btn" data-filter="casa">🏡 Casa & Futuro</button>
         </div>
 
         <!-- Gift Grid -->
@@ -3488,7 +3636,8 @@
             precisa <em>saber.</em>
           </h2>
           <p class="section-description">
-            Informações essenciais sobre data, endereço, trajes e utilitários para que você aproveite cada minuto da nossa celebração sem nenhuma dúvida.
+            Informações essenciais sobre data, endereço, trajes e utilitários para que você aproveite cada minuto da
+            nossa celebração sem nenhuma dúvida.
           </p>
         </div>
 
@@ -3538,13 +3687,16 @@
             <h3 class="info-title">Traje & Paleta</h3>
             <p class="info-desc">
               <strong>Venham confortáveis, coloridos e à vontade!</strong><br />
-              Queremos todo mundo se sentindo leve, alegre e feliz para celebrar esse dia tão especial junto com a gente. Tragam sua melhor energia e venham prontos para curtir muito!
+              Queremos todo mundo se sentindo leve, alegre e feliz para celebrar esse dia tão especial junto com a
+              gente. Tragam sua melhor energia e venham prontos para curtir muito!
             </p>
 
             <!-- Color Swatches Interactive -->
             <div class="color-swatches" title="Clique nas cores para ver sugestões">
-              <div class="color-swatch" style="background: #a56e50;" onclick="showToast('Terracotta: Elegante e acolhedor')"></div>
-              <div class="color-swatch" style="background: #c29b61;" onclick="showToast('Champagne / Dourado Suave')"></div>
+              <div class="color-swatch" style="background: #a56e50;"
+                onclick="showToast('Terracotta: Elegante e acolhedor')"></div>
+              <div class="color-swatch" style="background: #c29b61;" onclick="showToast('Champagne / Dourado Suave')">
+              </div>
               <div class="color-swatch" style="background: #5c6b54;" onclick="showToast('Verde Oliva / Sage')"></div>
               <div class="color-swatch" style="background: #2b3a4a;" onclick="showToast('Azul Marinho Clássico')"></div>
               <div class="color-swatch" style="background: #e3c0ab;" onclick="showToast('Rose Gold / Nude')"></div>
@@ -3570,7 +3722,8 @@
             para os <em>noivos.</em>
           </h2>
           <p class="section-description">
-            Pode ser emocionante, divertido, uma memória nostálgica ou votos sinceros para essa nova etapa da nossa vida.
+            Pode ser emocionante, divertido, uma memória nostálgica ou votos sinceros para essa nova etapa da nossa
+            vida.
           </p>
         </div>
 
@@ -3584,13 +3737,7 @@
 
             <div class="field">
               <label for="guestName">Seu Nome</label>
-              <input
-                id="guestName"
-                type="text"
-                maxlength="80"
-                placeholder="Ex: Seu Nome ou Família Silva"
-                required
-              />
+              <input id="guestName" type="text" maxlength="80" placeholder="Ex: Seu Nome ou Família Silva" required />
             </div>
 
             <!-- Tags Selector -->
@@ -3606,12 +3753,8 @@
 
             <div class="field">
               <label for="guestMessage">Sua Mensagem</label>
-              <textarea
-                id="guestMessage"
-                maxlength="500"
-                placeholder="Escreva seu recado com carinho..."
-                required
-              ></textarea>
+              <textarea id="guestMessage" maxlength="500" placeholder="Escreva seu recado com carinho..."
+                required></textarea>
               <div class="char-counter"><span id="charCount">0</span> / 500</div>
             </div>
 
@@ -3644,10 +3787,12 @@
       <div class="footer-label">Deployment Date • 11.10.2026</div>
       <h2 class="footer-title">Eloisa & Mateus</h2>
       <p class="footer-message">
-        Obrigado por fazer parte desse momento, da nossa história e desse projeto construído com amor, café e infinitas linhas de carinho.
+        Obrigado por fazer parte desse momento, da nossa história e desse projeto construído com amor, café e infinitas
+        linhas de carinho.
       </p>
 
-      <button class="footer-back-to-top magnetic-btn ripple-effect" onclick="window.lenis ? window.lenis.scrollTo(0) : window.scrollTo({top: 0, behavior: 'smooth'})">
+      <button class="footer-back-to-top magnetic-btn ripple-effect"
+        onclick="window.lenis ? window.lenis.scrollTo(0) : window.scrollTo({top: 0, behavior: 'smooth'})">
         <span>↑</span> Voltar ao Início
       </button>
 
@@ -3686,7 +3831,8 @@
 
         <div class="field">
           <label for="giftMessage">Recado Especial (Opcional)</label>
-          <textarea id="giftMessage" maxlength="400" placeholder="Deixe um recado com carinho junto com seu presente..."></textarea>
+          <textarea id="giftMessage" maxlength="400"
+            placeholder="Deixe um recado com carinho junto com seu presente..."></textarea>
         </div>
 
         <button class="btn-glow-border ripple-effect magnetic-btn" type="submit" style="width: 100%;">
@@ -3707,7 +3853,8 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input class="cmd-input" id="cmdInput" type="text" placeholder="Digite um comando ou navegue..." autocomplete="off" />
+        <input class="cmd-input" id="cmdInput" type="text" placeholder="Digite um comando ou navegue..."
+          autocomplete="off" />
         <kbd class="cmd-badge">ESC</kbd>
       </div>
 
@@ -3786,76 +3933,132 @@
 
     const GIFTS_DATA = [
       {
-        id: 1,
-        title: "Jantar Romântico à Luz de Velas",
-        price: 250,
-        category: "romantico",
-        description: "Porque depois de gastar uma pequena fortuna no casamento, a gente ainda precisa comer com classe.",
-        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
-      },
-      {
-        id: 2,
-        title: "Noite de Hotel Especial",
-        price: 500,
-        category: "lua-de-mel",
-        description: "Uma noite inesquecível onde vamos fingir que somos nobres e pedir café da manhã na cama.",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85"
-      },
-      {
-        id: 3,
-        title: "Passeio na Lua de Mel",
-        price: 750,
-        category: "lua-de-mel",
-        description: "Patrocine oficialmente duas pessoas andando por aí sem rumo e tirando 500 fotos por minuto.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
-      },
-      {
-        id: 4,
-        title: "Kit Sobrevivência Pós-Casamento",
-        price: 350,
+        id: 14,
+        title: "Toma aqui uns 50 reais",
+        price: 50,
         category: "humor",
-        description: "Café especial, snacks de madrugada e cursos rápidos de paciência e diplomacia doméstica.",
-        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85"
+        description: "Não vá dizer que eu não ajudei! O clássico dos clássicos para dar aquela força bem-humorada aos noivos.",
+        image: "assets/toma-aqui-50-reais.png"
       },
       {
-        id: 5,
-        title: "Cota Principal da Lua de Mel",
-        price: 1500,
-        category: "lua-de-mel",
-        description: "Você estará oficialmente financiando as passagens aéreas e a fuga dos recém-casados para o paraíso.",
-        image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1000&q=85"
+        id: 15,
+        title: "Se eu não comprar nada o desconto é maior",
+        price: 100,
+        category: "humor",
+        description: "O sábio Julius avisa: o desconto é maior se não comprar, mas os noivos agradecem de coração esses 100 reais!",
+        image: "assets/julius-desconto.png"
       },
       {
-        id: 6,
-        title: "Robô Aspirador Inteligente",
-        price: 900,
-        category: "casa",
-        description: "Para evitar 98% das pequenas discussões de quem é a vez de varrer a sala.",
-        image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=1000&q=85"
+        id: 10,
+        title: "Ajude o noivo a cortar a barba para o casamento",
+        price: 120,
+        category: "humor",
+        description: "Contribua com o barbeiro para que o noivo apareça reconhecível e apresentável no altar!",
+        image: "assets/cortar-barba-noivo.png"
+      },
+      {
+        id: 11,
+        title: "Sessão de terapia pra noiva não enlouquecer com os preparativos",
+        price: 150,
+        category: "humor",
+        description: "Uma contribuição essencial para manter a sanidade da noiva e a sobrevivência do noivo até o grande dia!",
+        image: "assets/terapia-noiva.jpg"
+      },
+      {
+        id: 12,
+        title: "Patrocine nossa ida aos Quilos Mortais",
+        price: 180,
+        category: "humor",
+        description: "Pizza na cama, delivery triplo e tudo que temos direito para estrear com estilo no reality do Dr. Now!",
+        image: "assets/quilos-mortais.png"
+      },
+      {
+        id: 16,
+        title: "Lenço para a noiva não borrar a maquiagem",
+        price: 200,
+        category: "humor",
+        description: "Item de segurança máxima para conter as lágrimas de emoção e salvar o investimento no maquiador!",
+        image: "assets/lenco-maquiagem.png"
+      },
+      {
+        id: 13,
+        title: "Primeiro lugar na fila do buffet",
+        price: 220,
+        category: "humor",
+        description: "Passe VIP prioritário para se servir antes de todo mundo e encher o prato sem julgamentos!",
+        image: "assets/primeiro-lugar-buffet.png"
       },
       {
         id: 7,
-        title: "Presente do Desenvolvedor",
+        title: "Ajuda para pagar os boletos",
         price: 300,
         category: "humor",
-        description: "Nem nós sabemos exatamente o que vamos fazer com esse valor. Mas garantimos que será bem investido.",
-        image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+        description: "Alivie a mente dos noivos e evite essa cara de desespero a cada código de barras que chega no e-mail!",
+        image: "assets/pagar-boletos.jpg"
+      },
+      {
+        id: 4,
+        title: "Kit Desenvolvedor para o noivo",
+        price: 350,
+        category: "humor",
+        description: "Tenha certeza de que você vai estar ajudando o noivo a codar mais e faturar mais para a família!",
+        image: "assets/kit-desenvolvedor-noivo.jpg"
       },
       {
         id: 8,
-        title: "Air Fryer dos Nossos Sonhos",
+        title: "Levar alguém que não foi convidado",
         price: 450,
-        category: "casa",
-        description: "O eletrodoméstico que consolida oficialmente qualquer casal no estado da vida adulta moderna.",
-        image: "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=1000&q=85"
+        category: "humor",
+        description: "Taxa de anistia oficial para colocar mais um prato na mesa sem o noivo ter um ataque de pânico!",
+        image: "assets/levar-nao-convidado.png"
+      },
+      {
+        id: 1,
+        title: "Não deixe nós irmos para o Quilos Mortais",
+        price: 500,
+        category: "humor",
+        description: "Patrocine o nosso projeto fitness e a academia para mantermos o shape dos noivos sempre em dia!",
+        image: "assets/salvar-dos-quilos-mortais.jpg"
       },
       {
         id: 9,
-        title: "Degustação de Vinhos & Queijos",
+        title: "Claro que posso pagar esse presente, meu marido tem 2 empregos",
         price: 600,
-        category: "romantico",
-        description: "Uma experiência gourmet para brindarmos ao amor e fingirmos que entendemos de notas de carvalho.",
-        image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85"
+        category: "humor",
+        description: "Para quem não precisa de desconto porque o marido trabalha dia e noite para bancar o luxo dos noivos!",
+        image: "assets/meu-marido-tem-2-empregos.png"
+      },
+      {
+        id: 3,
+        title: "EU SOU RICAAAAAA",
+        price: 750,
+        category: "humor",
+        description: "Para quem quer ostentar com elegância, gritar aos quatro ventos e abençoar os noivos com estilo!",
+        image: "assets/eu-sou-rica.png"
+      },
+      {
+        id: 6,
+        title: "Ajude nossa mini lua de mel hehehe",
+        price: 900,
+        category: "humor",
+        description: "Você sabe exatamente para que serve esse mimo... Patrocine esse momento especial a sós dos recém-casados!",
+        image: "assets/mini-lua-de-mel.png"
+      },
+      {
+        id: 5,
+        title: "Seja nosso parente favorito kk",
+        price: 1500,
+        category: "humor",
+        description: "Garanta o primeiro lugar no nosso coração, sorrisos sinceros em todos os almoços de família e nossa eterna gratidão!",
+        image: "assets/parente-favorito.png"
+      },
+      {
+        id: 17,
+        title: "Deus te abençoe e te dê em dobro",
+        price: 2000,
+        category: "humor",
+        description: "Bênçãos multiplicadas, sucesso financeiro no nível máximo e o nosso amém mais sincero para o seu bolso!",
+        image: "assets/deus-te-abencoe.png"
       }
     ];
 
@@ -4291,7 +4494,7 @@
     });
 
     const interactiveSelectors = "a, button, input, textarea, select, .magnetic-btn, .glare-card, .filter-btn, .cmd-item, .tag-btn, .like-btn, .info-btn, .copy-pix-btn, [role='button']";
-    
+
     document.addEventListener("mouseover", (e) => {
       if (codeCursor && e.target.closest(interactiveSelectors)) {
         codeCursor.classList.add("hovering");
@@ -4517,7 +4720,7 @@
     try {
       localStorage.removeItem("weddingMessages");
       localStorage.removeItem("weddingContributions");
-    } catch {}
+    } catch { }
 
     function getContributions() {
       try {
@@ -4531,19 +4734,14 @@
       localStorage.setItem("wedding_prod_contributions", JSON.stringify(list));
     }
 
-    let activeFilter = "all";
-
     function renderGifts() {
       const grid = $("#giftGrid");
       const contributions = getContributions();
       grid.innerHTML = "";
 
-      const filtered = GIFTS_DATA.filter((g) => {
-        if (!activeFilter || activeFilter === "all") return true;
-        return g.category === activeFilter;
-      });
+      const sortedGifts = [...GIFTS_DATA].sort((a, b) => a.price - b.price);
 
-      filtered.forEach((gift, idx) => {
+      sortedGifts.forEach((gift) => {
         const count = contributions.filter((c) => c.giftId === gift.id).length;
         const progressPct = Math.min(count * 35, 100);
 
@@ -4563,8 +4761,6 @@
         card.innerHTML = `
           <div class="gift-image-wrap">
             <img class="gift-image" src="${gift.image}" alt="${escapeHTML(gift.title)}" loading="lazy" />
-            <span class="gift-badge-cat">${gift.category}</span>
-            <div class="gift-number">${String(idx + 1).padStart(2, "0")}</div>
           </div>
           <div class="gift-body">
             <h3 class="gift-title">${escapeHTML(gift.title)}</h3>
@@ -4597,17 +4793,6 @@
         ScrollTrigger.refresh();
       }
     }
-
-    // Filter Buttons Listener
-    $$(".filter-btn[data-filter]").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        $$(".filter-btn[data-filter]").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeFilter = btn.dataset.filter || "all";
-        renderGifts();
-      });
-    });
 
     function renderRanking() {
       const list = $("#rankingList");
@@ -5078,7 +5263,7 @@
       "color: #73685e;"
     );
 
-    window.celebrateWedding = function() {
+    window.celebrateWedding = function () {
       triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 120);
       return "🎉 Viva Eloisa & Mateus! O deploy para a vida toda está garantido!";
     };
@@ -5091,4 +5276,5 @@
   </script>
 
 </body>
+
 </html>
