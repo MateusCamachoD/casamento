@@ -50,6 +50,8 @@
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <!-- Canvas Confetti Engine -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
     /* =========================================================
@@ -4726,24 +4728,75 @@
     });
 
     /* =========================================================
-       GIFTS & CONTRIBUTIONS SYSTEM (LOCALSTORAGE)
+       SUPABASE CLIENT INITIALIZATION & DATA SYNC
     ========================================================= */
-    // Purge legacy test data from earlier dev sessions
+    const SUPABASE_URL = "https://gobzwhmmtjlzrcxbsqkp.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvYnp3aG1tdGpsenJjeGJzcWtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NjkyODAsImV4cCI6MjEwMzI0NTI4MH0.WY5jJqpNQ3ZtKLOT4YDRFPmrTbXkyEjXycDkWfP0bMk";
+
+    let supabaseClient = null;
     try {
-      localStorage.removeItem("weddingMessages");
-      localStorage.removeItem("weddingContributions");
-    } catch { }
+      if (window.supabase) {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      }
+    } catch (err) {
+      console.warn("Aviso ao conectar Supabase:", err);
+    }
+
+    /* =========================================================
+       GIFTS & CONTRIBUTIONS SYSTEM (SUPABASE + LOCAL CACHE)
+    ========================================================= */
+    let contributionsCache = [];
+
+    function normalizeContribution(c) {
+      return {
+        id: c.id,
+        giftId: c.gift_id !== undefined ? c.gift_id : c.giftId,
+        giftTitle: c.gift_title || c.giftTitle || "",
+        guestName: c.guest_name || c.guestName || "",
+        message: c.message || "",
+        createdAt: c.created_at || c.createdAt || new Date().toISOString()
+      };
+    }
 
     function getContributions() {
+      if (contributionsCache.length > 0) return contributionsCache;
       try {
-        return JSON.parse(localStorage.getItem("wedding_prod_contributions") || "[]");
+        const local = JSON.parse(localStorage.getItem("wedding_prod_contributions") || "[]");
+        contributionsCache = Array.isArray(local) ? local.map(normalizeContribution) : [];
+        return contributionsCache;
       } catch {
         return [];
       }
     }
 
-    function saveContributions(list) {
+    function saveContributionsLocal(list) {
+      contributionsCache = list;
       localStorage.setItem("wedding_prod_contributions", JSON.stringify(list));
+    }
+
+    async function loadContributions() {
+      if (supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient
+            .from("contributions")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+          if (!error && Array.isArray(data)) {
+            contributionsCache = data.map(normalizeContribution);
+            localStorage.setItem("wedding_prod_contributions", JSON.stringify(contributionsCache));
+            renderGifts();
+            return;
+          } else if (error) {
+            console.warn("Supabase contributions error:", error);
+          }
+        } catch (err) {
+          console.warn("Erro ao buscar presentes no Supabase:", err);
+        }
+      }
+      // Fallback
+      getContributions();
+      renderGifts();
     }
 
     function renderGifts() {
@@ -4919,62 +4972,151 @@
     });
 
     // Gift Confirm Form
-    $("#giftConfirmForm").addEventListener("submit", (e) => {
+    $("#giftConfirmForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!currentSelectedGift) return;
 
       const name = $("#giftGuestName").value.trim();
       const message = $("#giftMessage").value.trim();
+      const submitBtn = e.target.querySelector("button[type='submit']");
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : "Confirmar Presente";
 
       if (!name) return;
 
-      const contributions = getContributions();
-      contributions.push({
-        id: Date.now(),
-        giftId: currentSelectedGift.id,
-        giftTitle: currentSelectedGift.title,
-        guestName: name,
-        message: message,
-        createdAt: new Date().toISOString()
-      });
-      saveContributions(contributions);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Registrando...</span>`;
+      }
+
+      let savedOk = false;
+      if (supabaseClient) {
+        try {
+          const { error } = await supabaseClient.from("contributions").insert([{
+            gift_id: currentSelectedGift.id,
+            gift_title: currentSelectedGift.title,
+            guest_name: name,
+            message: message
+          }]);
+          if (!error) savedOk = true;
+          else console.warn("Supabase contribution insert error:", error);
+        } catch (err) {
+          console.warn("Erro ao salvar presente:", err);
+        }
+      }
 
       if (message) {
-        const messages = getMessages();
-        messages.push({
-          id: Date.now() + 1,
-          name: name,
-          tag: "🎁 Presente Registrado",
-          message: `${message} (Presente: ${currentSelectedGift.title})`,
-          likes: 1,
+        if (supabaseClient) {
+          try {
+            await supabaseClient.from("messages").insert([{
+              name: name,
+              tag: "🎁 Presente Registrado",
+              message: `${message} (Presente: ${currentSelectedGift.title})`,
+              likes: 1
+            }]);
+          } catch (err) {
+            console.warn("Erro ao salvar recado do presente:", err);
+          }
+        }
+      }
+
+      // Fallback local se estiver offline
+      if (!savedOk) {
+        const localContribs = getContributions();
+        localContribs.unshift({
+          id: Date.now(),
+          giftId: currentSelectedGift.id,
+          giftTitle: currentSelectedGift.title,
+          guestName: name,
+          message: message,
           createdAt: new Date().toISOString()
         });
-        saveMessages(messages);
-        renderMessages();
+        saveContributionsLocal(localContribs);
+
+        if (message) {
+          const localMsgs = getMessages();
+          localMsgs.unshift({
+            id: Date.now() + 1,
+            name: name,
+            tag: "🎁 Presente Registrado",
+            message: `${message} (Presente: ${currentSelectedGift.title})`,
+            likes: 1,
+            createdAt: new Date().toISOString()
+          });
+          saveMessagesLocal(localMsgs);
+        }
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
       }
 
       closeGiftModal();
-      renderGifts();
+      await loadContributions();
+      if (message) await loadMessages();
 
       triggerConfetti(window.innerWidth / 2, window.innerHeight / 2, 70);
       showToast("Presente registrado com sucesso! Muito obrigado pelo carinho ❤️");
     });
 
     /* =========================================================
-       GUESTBOOK / MESSAGES SYSTEM
+       GUESTBOOK / MESSAGES SYSTEM (SUPABASE + LOCAL CACHE)
     ========================================================= */
+    let messagesCache = [];
+
+    function normalizeMessage(m) {
+      return {
+        id: m.id,
+        name: m.name || "",
+        tag: m.tag || "❤️ Amor & Votos",
+        message: m.message || "",
+        likes: typeof m.likes === "number" ? m.likes : 1,
+        createdAt: m.created_at || m.createdAt || new Date().toISOString()
+      };
+    }
+
     function getMessages() {
+      if (messagesCache.length > 0) return messagesCache;
       try {
         const saved = localStorage.getItem("wedding_prod_messages");
-        if (saved) return JSON.parse(saved);
+        if (saved) {
+          messagesCache = JSON.parse(saved).map(normalizeMessage);
+          return messagesCache;
+        }
         return [];
       } catch {
         return [];
       }
     }
 
-    function saveMessages(msgs) {
+    function saveMessagesLocal(msgs) {
+      messagesCache = msgs;
       localStorage.setItem("wedding_prod_messages", JSON.stringify(msgs));
+    }
+
+    async function loadMessages() {
+      if (supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient
+            .from("messages")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+          if (!error && Array.isArray(data)) {
+            messagesCache = data.map(normalizeMessage);
+            localStorage.setItem("wedding_prod_messages", JSON.stringify(messagesCache));
+            renderMessages();
+            return;
+          } else if (error) {
+            console.warn("Supabase messages error:", error);
+          }
+        } catch (err) {
+          console.warn("Erro ao buscar recados no Supabase:", err);
+        }
+      }
+      // Fallback
+      getMessages();
+      renderMessages();
     }
 
     let selectedMessageTag = "❤️ Amor & Votos";
@@ -5011,7 +5153,10 @@
         return;
       }
 
-      [...messages].reverse().forEach((msg) => {
+      // Ordenar por data mais recente primeiro
+      const sortedMessages = [...messages].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+      sortedMessages.forEach((msg) => {
         const card = document.createElement("article");
         card.className = "message-card";
         const dateStr = formatMessageDate(msg.createdAt);
@@ -5034,45 +5179,123 @@
       });
     }
 
-    function likeMessage(msgId, btn) {
+    const likedMessageIds = new Set();
+
+    async function likeMessage(msgId, btn) {
       const messages = getMessages();
       const item = messages.find((m) => m.id === msgId);
-      if (item) {
-        item.likes = (item.likes || 0) + 1;
-        saveMessages(messages);
-        btn.classList.add("liked");
-        btn.querySelector(".like-num").textContent = item.likes;
-        const rect = btn.getBoundingClientRect();
-        triggerConfetti(rect.left + rect.width / 2, rect.top, 20);
+      if (!item) return;
+
+      if (likedMessageIds.has(msgId)) {
+        showToast("Você já curtiu esta mensagem! ❤️");
+        return;
       }
+
+      likedMessageIds.add(msgId);
+      item.likes = (item.likes || 0) + 1;
+      btn.classList.add("liked");
+      btn.querySelector(".like-num").textContent = item.likes;
+
+      const rect = btn.getBoundingClientRect();
+      triggerConfetti(rect.left + rect.width / 2, rect.top, 20);
+
+      if (supabaseClient) {
+        try {
+          await supabaseClient
+            .from("messages")
+            .update({ likes: item.likes })
+            .eq("id", msgId);
+        } catch (err) {
+          console.warn("Erro ao curtir no Supabase:", err);
+        }
+      }
+      saveMessagesLocal(messages);
     }
 
-    $("#messageForm").addEventListener("submit", (e) => {
+    $("#messageForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = $("#guestName").value.trim();
       const message = $("#guestMessage").value.trim();
+      const submitBtn = e.target.querySelector("button[type='submit']");
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : "Publicar Recado";
 
       if (!name || !message) return;
 
-      const messages = getMessages();
-      messages.push({
-        id: Date.now(),
-        name: name,
-        tag: selectedMessageTag,
-        message: message,
-        likes: 1,
-        createdAt: new Date().toISOString()
-      });
-      saveMessages(messages);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Publicando...</span>`;
+      }
+
+      let savedOk = false;
+      if (supabaseClient) {
+        try {
+          const { error } = await supabaseClient.from("messages").insert([{
+            name: name,
+            tag: selectedMessageTag,
+            message: message,
+            likes: 1
+          }]);
+          if (!error) savedOk = true;
+          else console.warn("Supabase message insert error:", error);
+        } catch (err) {
+          console.warn("Erro ao salvar mensagem no Supabase:", err);
+        }
+      }
+
+      if (!savedOk) {
+        const messages = getMessages();
+        messages.unshift({
+          id: Date.now(),
+          name: name,
+          tag: selectedMessageTag,
+          message: message,
+          likes: 1,
+          createdAt: new Date().toISOString()
+        });
+        saveMessagesLocal(messages);
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
 
       $("#messageForm").reset();
       charCount.textContent = "0";
-      renderMessages();
+      await loadMessages();
 
       const rect = e.target.querySelector("button[type='submit']").getBoundingClientRect();
       triggerConfetti(rect.left + rect.width / 2, rect.top, 50);
       showToast("Seu recado foi publicado no mural! 💌");
     });
+
+    /* =========================================================
+       REALTIME SYNC
+    ========================================================= */
+    function setupRealtimeSync() {
+      if (!supabaseClient) return;
+      try {
+        supabaseClient
+          .channel("wedding-realtime-channel")
+          .on(
+            "postgres_changes",
+            { event: "*", schema: "public", table: "messages" },
+            () => {
+              loadMessages();
+            }
+          )
+          .on(
+            "postgres_changes",
+            { event: "*", schema: "public", table: "contributions" },
+            () => {
+              loadContributions();
+            }
+          )
+          .subscribe();
+      } catch (err) {
+        console.warn("Erro no Realtime:", err);
+      }
+    }
 
     /* =========================================================
        CALENDAR & MAPS INTEGRATION
@@ -5285,6 +5508,9 @@
     ========================================================= */
     renderGifts();
     renderMessages();
+    loadContributions();
+    loadMessages();
+    setupRealtimeSync();
   </script>
 
 </body>
